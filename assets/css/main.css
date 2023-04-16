@@ -3630,7 +3630,8 @@ input, select, textarea {
 		background-image: url("images/crab in underground scene.jpg"), url("images/pattern-size1.svg");   /* todo alz*/
 		background-position: top left, center center;
 		background-attachment: fixed, fixed;
-		background-size: auto, cover;
+		/*background-size: auto, cover;*/
+		background-size: cover;
 		height: 100vh;
 		min-height: 35em;
 	}
