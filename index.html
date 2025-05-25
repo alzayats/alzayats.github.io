@@ -1,548 +1,91 @@
-<!DOCTYPE HTML>
-<!--
-	Fractal by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Alzayat Saleh</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-<!--		<tagname lang="en">Content</tagname>-->
-	</head>
-	<body class="is-preload">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Alzayat Saleh - Machine Learning Engineer</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="light-mode"> <!-- Start with light-mode by default -->
+<header>
+	<div class="container">
+		<h1>Alzayat Saleh</h1>
+		<p class="tagline">Machine Learning Engineer</p>
+		<nav>
+			<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#publications">Publications</a></li>
+				<li><a href="#contact">Connect</a></li>
+				<li>
+					<!-- Dark/Light Mode Toggle -->
+					<button id="darkModeToggle" aria-label="Toggle dark mode">
+						<i class="fas fa-moon"></i> <!-- Moon icon for dark mode -->
+						<!-- <i class="fas fa-sun"></i> Sun icon for light mode (will be swapped by JS) -->
+					</button>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
 
-		<!-- Header -->
-			<header id="header">
-				<div class="content">
-					<h1><a href="#">Alzayat Saleh</a></h1>
-					<p>Machine Learning Engineer</p>
-					<ul class="actions">
-<!--						<li><a href="#" class="button primary icon solid fa-download">Download</a></li>-->
-						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
-					</ul>
-				</div>
-				<div class="image phone"><div class="inner"><img src="images/image_2.jpg" alt="" /></div></div>
-			</header>
+<main>
+	<section id="about" class="container">
+		<h2>About Me</h2>
+		<p>
+<!--			Hello! I'm Alzayat Saleh, a Machine Learning Engineer specializing in computer vision and deep learning applications, particularly in ecological monitoring, medical imaging, and agricultural technology. My work focuses on developing innovative solutions to real-world problems.-->
+			Hello! I’m Alzayat Saleh, a Machine Learning Engineer with a PhD in Deep Learning and Computer Vision. I specialise in computer vision and deep learning applications, particularly in ecological monitoring, medical imaging, and agricultural technology. My work focuses on developing innovative solutions to real-world problems.
+<!--			My work focuses on developing innovative, practical solutions to real-world problems—ranging from underwater image analysis to intelligent systems for aquaculture and agriculture.-->
+			If you’re interested in applying AI to complex environmental or biological systems—or simply want to chat about vision models, or edge AI — <a href="#contact">feel free to get in touch</a>.
+		</p>
+		<div class="profile-image-container">
+			<!-- Add a photo of yourself here if you like -->
+			 <img src="images/profile.jpg" alt="Alzayat Saleh" class="profile-photo">
+<!--			<div class="profile-photo-placeholder">Your Photo Here (e.g., 150x150px)</div>-->
+		</div>
+	</section>
 
-		<!-- One -->
-			<section id="one" class="wrapper style2 special">
-				<header class="major">
-					<h2>My Social Media Accounts</h2>
-				</header>
-				<ul class="icons major">
-<!--					<li><span class="icon solid fa-camera-retro"><span class="label">Shoot</span></span></li>-->
-<!--					<li><span class="icon solid fa-sync"><span class="label">Process</span></span></li>-->
-<!--					<li><span class="icon solid fa-cloud"><span class="label">Upload</span></span></li>-->
-					<li><a href="https://github.com/alzayats" target="_blank"><span class="icon brands fa-github"><span class="label">GitHub</span></span></a></li>
-					<li><a href="https://twitter.com/alzayats" target="_blank"><span class="icon brands fa-twitter"><span class="label">Twitter</span></span></a></li>
-					<li><a href="https://www.instagram.com/alzayatsaleh/" target="_blank"><span class="icon brands fa-instagram"><span class="label">Instagram</span></span></a></li>
-					<li><a href="https://www.linkedin.com/in/alzayat/" target="_blank"><span class="icon brands fa-linkedin"><span class="label">LinkedIn</span></span></a></li>
-					<li><a href="https://scholar.google.com/citations?user=OaFJvaIAAAAJ&hl=en" target="_blank"><span class="icon brands fa-google"><span class="label">Google Scholar</span></span></a></li>
-					<li><a href="https://www.youtube.com/@alzdeeplearning3459" target="_blank"><span class="icon brands fa-youtube"><span class="label">YouTube</span></span></a></li>
-				</ul>
-			</section>
+	<section id="publications" class="container">
+		<h2>Publications</h2>
+<!--		<p class="update-instr">To update publications, edit the <code>bibtexData</code> variable in <code>script.js</code>.</p>-->
+		<div id="publications-list">
+			<!-- Publications will be dynamically inserted here by JavaScript -->
+		</div>
+	</section>
 
-		<section id="three" class="wrapper style2 special">
-			<header class="major">
-				<h2>Research</h2>
-<!--				<p>Gravida at leo elementum elit fusce accumsan dui libero, quis vehicula<br />-->
-<!--					lectus ultricies eu. In convallis amet leo sapien iaculis efficitur.</p>-->
-				<p>My research interests include developing novel deep learning methods for<br />
-					underwater fish detection, segmentation, tracking, and landmark detection.<br />
-					I also apply deep learning techniques to biomedical image analysis,<br />
-					such as measuring abdominal muscle dimensions from ultrasound images.</p>
-			</header>
-			<!--				<ul class="actions special">-->
-			<!--					<li><a href="#" class="button primary icon solid fa-download">Download</a></li>-->
-			<!--					<li><a href="#" class="button">Learn More</a></li>-->
-			<!--				</ul>-->
-		</section>
-		<!-- Two -->
-			<section id="two" class="wrapper">
-				<div class="inner alt">
-					<section class="spotlight">
-						<div class="image"><img src="images/prawn.png" alt="" /></div>
-						<div class="content">
-							<h3>Prawn Weight and Morphometry</h3>
-							<p><a href="https://arxiv.org/pdf/2209.05777"  target="_blank">Image-Based Prawn Weight and Morphometry Estimation using Deep Learning with Kronecker Product Features and Landmark Localization</a><br />
-								<strong>A. Saleh</strong>, M. Hasan, H. Raadsma, M. Khatkar, D. Jerry, MR. Azghadi  <a href="https://arxiv.org/pdf/2209.05777"  target="_blank">[PDF]</a> </p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/fig_1.png" alt="" /></div>
-						<div class="content">
-							<h3>Image Enhancement</h3>
-							<p><a href="https://arxiv.org/pdf/2212.08983"  target="_blank">Adaptive Uncertainty Distribution in Deep Learning for Unsupervised Underwater Image Enhancement</a><br />
-								<strong>A. Saleh</strong>, M. Sheaves, D. Jerry, MR. Azghadi  <a href="https://arxiv.org/pdf/2212.08983"  target="_blank">[PDF]</a> </p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/fig_10.png" alt="" /></div>
-						<div class="content">
-							<h3>Landmark Detection</h3>
-							<p><a href="https://arxiv.org/pdf/2209.05777"  target="_blank">A lightweight Transformer-based model for fish landmark detection</a><br />
-								<strong>A. Saleh</strong>, D. Jones, D. Jerry, MR. Azghadi <a href="https://arxiv.org/pdf/2209.05777"  target="_blank">[PDF]</a> </p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/track.png" alt="" /></div>
-						<div class="content">
-							<h3>Fish Trajectory Tracking</h3>
-							<p><a href="https://arxiv.org/pdf/2208.10662"  target="_blank">Unsupervised Fish Trajectory Tracking and Segmentation</a><br />
-								<strong>A. Saleh</strong>, M. Sheaves, D. Jerry, MR. Azghadi  <a href="https://arxiv.org/pdf/2208.10662"  target="_blank">[PDF]</a> </p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/CV_comp.png" alt="" /></div>
-						<div class="content">
-							<h3>Fish Classification Survey</h3>
-							<p><a href="https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/faf.12666"  target="_blank">Computer vision and deep learning for fish classification in underwater habitats: A survey</a><br />
-								<strong>A. Saleh</strong>, M. Sheaves,   MR. Azghadi  <a href="https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/faf.12666"  target="_blank">[PDF]</a> </p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/segmnt.png" alt="" /></div>
-						<div class="content">
-							<h3>Fish Segmentation</h3>
-							<p><a href="https://arxiv.org/pdf/2206.05390"  target="_blank">Transformer-based Self-Supervised Fish Segmentation in Underwater Videos</a><br />
-								<strong>A. Saleh</strong>, M. Sheaves, D. Jerry, MR. Azghadi  <a href="https://arxiv.org/pdf/2206.05390"  target="_blank">[PDF]</a> </p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/train3.png" alt="" /></div>
-						<div class="content">
-							<h3>A Tutorial and Survey</h3>
-							<p><a href="https://arxiv.org/pdf/2206.05394"  target="_blank">Applications of deep learning in fish habitat monitoring: A tutorial and survey</a><br />
-								<strong>A. Saleh</strong>, M. Sheaves, D. Jerry, MR. Azghadi  <a href="https://arxiv.org/pdf/2206.05394"  target="_blank">[PDF]</a> </p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/Lab_Sch_old.png" alt="" /></div>
-						<div class="content">
-							<h3>Fish Segmentation</h3>
-							<p><a href="https://www.nature.com/articles/s41598-021-96610-2"  target="_blank">Weakly supervised underwater fish segmentation using affinity LCFCN</a><br />
-								IH. Laradji, <strong>A. Saleh</strong>, P. Rodriguez, D. Nowrouzezahrai, MR. Azghadi <a href="https://www.nature.com/articles/s41598-021-96610-2"  target="_blank">[PDF]</a> </p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/best_worst.png" alt="" /></div>
-						<div class="content">
-							<h3>Ultrasound Images</h3>
-							<p><a href="https://ieeexplore.ieee.org/iel7/6221020/6363502/09444630.pdf"  target="_blank">A deep learning localization method for measuring abdominal muscle dimensions in ultrasound images</a><br />
-								<strong>A. Saleh</strong>, IH. Laradji, C. Lammie, D. Vazquez, CA. Flavell, MR. Azghadi <a href="https://ieeexplore.ieee.org/iel7/6221020/6363502/09444630.pdf"  target="_blank">[PDF]</a> </p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/Layer 2 copy.png" alt="" /></div>
-						<div class="content">
-							<h3>DeepFish Dataset</h3>
-							<p><a href="https://www.nature.com/articles/s41598-020-71639-x"  target="_blank">A realistic fish-habitat dataset to evaluate algorithms for underwater visual analysis</a><br />
-								<strong>A. Saleh</strong>, IH. Laradji, DA. Konovalov, M. Bradley, D. Vazquez, M. Sheaves <a href="https://www.nature.com/articles/s41598-020-71639-x"  target="_blank">[PDF]</a> </p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/Feature_old.png" alt="" /></div>
-						<div class="content">
-							<h3>MPhil Thesis</h3>
-							<p><a href="https://researchonline.jcu.edu.au/68786/1/JCU_68786_Saleh_2020_thesis.pdf"  target="_blank">Developing deep learning methods for aquaculture applications</a><br />
-								<strong>A. Saleh</strong> <a href="https://researchonline.jcu.edu.au/68786/1/JCU_68786_Saleh_2020_thesis.pdf"  target="_blank">[PDF]</a> </p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/fish_1.jpg" alt="" /></div>
-						<div class="content">
-							<h3>Fish Weight</h3>
-							<p><a href="https://arxiv.org/pdf/1909.02710"  target="_blank">Automatic weight estimation of harvested fish from images</a><br />
-								 DA. Konovalov, <strong>A. Saleh</strong>, DB. Efremova, JA. Domingos, DR. Jerry <a href="https://arxiv.org/pdf/1909.02710"  target="_blank">[PDF]</a> </p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/Image 30.png" alt="" /></div>
-						<div class="content">
-							<h3>Fish Detection</h3>
-							<p><a href="https://ieeexplore.ieee.org/iel7/8840768/8851681/08851907.pdf"  target="_blank">Underwater fish detection with weak multi-domain supervision</a><br />
-								 DA. Konovalov, <strong>A. Saleh</strong>, M. Bradley, M. Sankupellay, S. Marini, M. Sheaves <a href="https://ieeexplore.ieee.org/iel7/8840768/8851681/08851907.pdf"  target="_blank">[PDF]</a> </p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/Image 10.png" alt="" /></div>
-						<div class="content">
-							<h3>Fish Mass</h3>
-							<p><a href="https://www.scirp.org/html/86536_86536.htm"  target="_blank">Estimating mass of harvested Asian seabass Lates calcarifer from images</a><br />
-								 DA. Konovalov, <strong>A. Saleh</strong>, JA. Domingos, RD. White, DR. Jerry <a href="https://www.scirp.org/html/86536_86536.htm"  target="_blank">[PDF]</a> </p>
-						</div>
-					</section>
-<!--					<section class="special">-->
-<!--						<ul class="icons labeled">-->
-<!--							<li><span class="icon solid fa-camera-retro"><span class="label">Ipsum lorem accumsan</span></span></li>-->
-<!--							<li><span class="icon solid fa-sync"><span class="label">Sed vehicula elementum</span></span></li>-->
-<!--							<li><span class="icon solid fa-cloud"><span class="label">Elit fusce consequat</span></span></li>-->
-<!--							<li><span class="icon solid fa-code"><span class="label">Lorem nullam tempus</span></span></li>-->
-<!--							<li><span class="icon solid fa-desktop"><span class="label">Adipiscing amet sapien</span></span></li>-->
-<!--						</ul>-->
-<!--					</section>-->
-				</div>
-			</section>
+	<section id="contact" class="container">
+		<h2>Connect With Me</h2>
+		<ul class="social-icons">
+			<li><a href="https://github.com/alzayats" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i> <span class="social-label">GitHub</span></a></li>
+			<li><a href="https://twitter.com/alzayats" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i> <span class="social-label">Twitter</span></a></li>
+			<li><a href="https://www.instagram.com/alzayatsaleh/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i> <span class="social-label">Instagram</span></a></li>
+			<li><a href="https://www.linkedin.com/in/alzayat/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i> <span class="social-label">LinkedIn</span></a></li>
+			<li><a href="https://scholar.google.com/citations?user=OaFJvaIAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i> <span class="social-label">Google Scholar</span></a></li>
+			<li><a href="https://www.youtube.com/@alzdeeplearning3459" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i> <span class="social-label">YouTube</span></a></li>
+		</ul>
+<!--		<p>You can also reach me via email: <a href="mailto:your-email@example.com">your-email@example.com</a>.</p>-->
+		<!-- In your #contact section -->
+		<p>
+			You can also reach me via email:
+			<span id="email-placeholder" title="Click to reveal email">
+        <i class="fas fa-envelope"></i> Show Email Address
+    </span>
+			<noscript>Please enable JavaScript to see my email address.</noscript>
+		</p>
+	</section>
+</main>
 
-		<!-- Three -->
-<!--			<section id="three" class="wrapper style2 special">-->
-<!--				<header class="major">-->
-<!--					<h2>Magna leo sapien gravida</h2>-->
-<!--					<p>Gravida at leo elementum elit fusce accumsan dui libero, quis vehicula<br />-->
-<!--					lectus ultricies eu. In convallis amet leo sapien iaculis efficitur.</p>-->
-<!--				</header>-->
-<!--&lt;!&ndash;				<ul class="actions special">&ndash;&gt;-->
-<!--&lt;!&ndash;					<li><a href="#" class="button primary icon solid fa-download">Download</a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;					<li><a href="#" class="button">Learn More</a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;				</ul>&ndash;&gt;-->
-<!--			</section>-->
+<footer>
+	<div class="container">
+		<p>© <span id="current-year"></span> Alzayat Saleh. All rights reserved.</p>
+	</div>
+</footer>
 
-		<!-- Four -->
-		<!--
-			<section id="four" class="wrapper">
-				<div class="inner">
+<!-- Back to Top Button -->
+<button id="backToTopBtn" title="Go to top">
+	<i class="fas fa-arrow-up"></i>
+</button>
 
-					<header class="major">
-						<h2>Elements</h2>
-					</header>
-
-					<section>
-						<h4>Text</h4>
-						<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-						This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-						This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-						<hr />
-						<header>
-							<h4>Heading with a Subtitle</h4>
-							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-						</header>
-						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-						<header>
-							<h5>Heading with a Subtitle</h5>
-							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-						</header>
-						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-						<hr />
-						<h2>Heading Level 2</h2>
-						<h3>Heading Level 3</h3>
-						<h4>Heading Level 4</h4>
-						<h5>Heading Level 5</h5>
-						<h6>Heading Level 6</h6>
-						<hr />
-						<h5>Blockquote</h5>
-						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-						<h5>Preformatted</h5>
-						<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-  print 'Iteration ' + i;
-  deck.shuffle();
-  i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-					</section>
-
-					<section>
-						<h4>Lists</h4>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<h5>Unordered</h5>
-								<ul>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Sagittis adipiscing.</li>
-									<li>Felis enim feugiat.</li>
-								</ul>
-								<h5>Alternate</h5>
-								<ul class="alt">
-									<li>Dolor pulvinar etiam.</li>
-									<li>Sagittis adipiscing.</li>
-									<li>Felis enim feugiat.</li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-medium">
-								<h5>Ordered</h5>
-								<ol>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Etiam vel felis viverra.</li>
-									<li>Felis enim feugiat.</li>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Etiam vel felis lorem.</li>
-									<li>Felis enim et feugiat.</li>
-								</ol>
-								<h5>Icons</h5>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								</ul>
-							</div>
-						</div>
-						<h5>Actions</h5>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<ul class="actions">
-									<li><a href="#" class="button primary">Default</a></li>
-									<li><a href="#" class="button">Default</a></li>
-								</ul>
-								<ul class="actions small">
-									<li><a href="#" class="button primary small">Small</a></li>
-									<li><a href="#" class="button small">Small</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary">Default</a></li>
-									<li><a href="#" class="button">Default</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary small">Small</a></li>
-									<li><a href="#" class="button small">Small</a></li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-medium">
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary fit">Default</a></li>
-									<li><a href="#" class="button fit">Default</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary small fit">Small</a></li>
-									<li><a href="#" class="button small fit">Small</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
-
-					<section>
-						<h4>Table</h4>
-						<h5>Default</h5>
-						<div class="table-wrapper">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-
-						<h5>Alternate</h5>
-						<div class="table-wrapper">
-							<table class="alt">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-					</section>
-
-					<section>
-						<h4>Buttons</h4>
-						<ul class="actions">
-							<li><a href="#" class="button primary">Primary</a></li>
-							<li><a href="#" class="button">Default</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button large">Large</a></li>
-							<li><a href="#" class="button">Default</a></li>
-							<li><a href="#" class="button small">Small</a></li>
-						</ul>
-						<ul class="actions fit">
-							<li><a href="#" class="button fit">Fit</a></li>
-							<li><a href="#" class="button primary fit">Fit</a></li>
-							<li><a href="#" class="button fit">Fit</a></li>
-						</ul>
-						<ul class="actions fit small">
-							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-							<li><a href="#" class="button fit small">Fit + Small</a></li>
-							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-							<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-						</ul>
-						<ul class="actions">
-							<li><span class="button primary disabled">Disabled</span></li>
-							<li><span class="button disabled">Disabled</span></li>
-						</ul>
-					</section>
-
-					<section>
-						<h4>Form</h4>
-						<form method="post" action="#">
-							<div class="row gtr-uniform">
-								<div class="col-6 col-12-xsmall">
-									<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-								</div>
-								<div class="col-12">
-									<select name="demo-category" id="demo-category">
-										<option value="">- Category -</option>
-										<option value="1">Manufacturing</option>
-										<option value="1">Shipping</option>
-										<option value="1">Administration</option>
-										<option value="1">Human Resources</option>
-									</select>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-									<label for="demo-priority-low">Low</label>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-normal" name="demo-priority">
-									<label for="demo-priority-normal">Normal</label>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-high" name="demo-priority">
-									<label for="demo-priority-high">High</label>
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-copy" name="demo-copy">
-									<label for="demo-copy">Email me a copy</label>
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-human" name="demo-human" checked>
-									<label for="demo-human">Not a robot</label>
-								</div>
-								<div class="col-12">
-									<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-								</div>
-								<div class="col-12">
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</div>
-							</div>
-						</form>
-					</section>
-
-					<section>
-						<h4>Image</h4>
-						<h5>Fit</h5>
-						<div class="box alt">
-							<div class="row gtr-uniform">
-								<div class="col-12"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-							</div>
-						</div>
-						<h5>Left &amp; Right</h5>
-						<p><span class="image left"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						<p><span class="image right"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-					</section>
-
-				</div>
-			</section>
-		-->
-
-		<!-- Footer -->
-			<footer id="footer">
-<!--				<ul class="icons">-->
-<!--					<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>-->
-<!--					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>-->
-<!--					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>-->
-<!--				</ul>-->
-<!--				<p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a></p>-->
-				<p class="copyright"><script>document.write(new Date().getFullYear());</script> &copy; <a href="https://alzayats.github.io/">alzayats.github.io</a> | Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-<!--				<p class="copyright"><span id="year"></span> &copy;  <a href="https://alzayats.github.io/">alzayats.github.io</a> | Design: <a href="https://html5up.net">HTML5 UP</a>.</p>-->
-
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-<!--		<script>-->
-<!--			document.getElementById("year").textContent = new Date().getFullYear();-->
-<!--		</script>-->
-
-	</body>
+<script src="script.js"></script>
+</body>
 </html>

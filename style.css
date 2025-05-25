@@ -1,0 +1,566 @@
+/* --- Modern & Clean with Teal Accent Theme --- */
+
+/* Google Fonts - Montserrat for headings, Open Sans for body */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Basic Reset & Defaults */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.7;
+	font-size: 16px;
+	transition: background-color 0.3s ease, color 0.3s ease; /* For smooth theme transition */
+}
+
+.container {
+	width: 90%;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 25px 0;
+}
+
+/* --- Light Mode Variables (Default) --- */
+body.light-mode {
+	--bg-color: #f8f9fa; /* Very light grey background */
+	--text-color: #343a40; /* Darker grey for text */
+	--heading-color: #212529;
+	--card-bg-color: #ffffff;
+	--border-color: #dee2e6;
+	--shadow-color: rgba(0, 0, 0, 0.075);
+	--header-bg-color: #ffffff;
+	--header-shadow-color: rgba(0, 0, 0, 0.075);
+	--footer-bg-color: #212529; /* Darker footer bg */
+	--footer-text-color: #adb5bd;
+	--footer-link-color: #f8f9fa;
+	--accent-color: #17a2b8; /* Teal/Info Blue */
+	--accent-color-darker: #138496;
+	--icon-color: #343a40;
+	--nav-link-color: #343a40;
+	--profile-border-color: #17a2b8;
+	--placeholder-bg: #e9ecef;
+	--placeholder-text: #6c757d;
+	--placeholder-border: #ced4da;
+}
+
+/* --- Dark Mode Variables --- */
+body.dark-mode {
+	--bg-color: #1a1a1a; /* Dark background */
+	--text-color: #e0e0e0; /* Light grey text */
+	--heading-color: #ffffff;
+	--card-bg-color: #2c2c2c; /* Darker card background */
+	--border-color: #444444;
+	--shadow-color: rgba(255, 255, 255, 0.05);
+	--header-bg-color: #232323;
+	--header-shadow-color: rgba(255, 255, 255, 0.05);
+	--footer-bg-color: #121212; /* Even darker footer bg */
+	--footer-text-color: #888888;
+	--footer-link-color: #bbbbbb;
+	--accent-color: #20c997; /* Brighter Teal for dark mode */
+	--accent-color-darker: #1baa80;
+	--icon-color: #e0e0e0;
+	--nav-link-color: #e0e0e0;
+	--profile-border-color: #20c997;
+	--placeholder-bg: #3a3a3a;
+	--placeholder-text: #aaaaaa;
+	--placeholder-border: #555555;
+}
+
+/* Apply variables */
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+
+/* Header */
+header {
+	background-color: var(--header-bg-color);
+	color: var(--text-color);
+	padding: 30px 0;
+	text-align: center;
+	border-bottom: 1px solid var(--border-color);
+	box-shadow: 0 2px 4px var(--header-shadow-color);
+	transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2.8em;
+	font-weight: 700;
+	color: var(--heading-color);
+	margin-bottom: 0.1em;
+	transition: color 0.3s ease;
+}
+
+header .tagline {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.3em;
+	color: var(--accent-color);
+	font-weight: 400;
+	margin-bottom: 1.5em;
+	transition: color 0.3s ease;
+}
+
+nav ul {
+	list-style: none;
+	display: flex; /* For aligning toggle button */
+	justify-content: center;
+	align-items: center;
+}
+
+nav ul li {
+	display: inline-block;
+	margin: 0 18px;
+}
+
+nav ul li a {
+	font-family: 'Montserrat', sans-serif;
+	color: var(--nav-link-color);
+	text-decoration: none;
+	font-weight: 600;
+	padding: 8px 0;
+	position: relative;
+	transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 2px;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: var(--accent-color);
+	transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+	color: var(--accent-color);
+}
+
+nav ul li a:hover::after,
+nav ul li a:focus::after {
+	width: 100%;
+}
+
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+	background: none;
+	border: none;
+	color: var(--nav-link-color); /* Use nav link color */
+	font-size: 1.2em; /* Adjust size as needed */
+	cursor: pointer;
+	padding: 8px; /* Add some padding for easier clicking */
+	margin-left: 10px; /* Space it from other nav items */
+	transition: color 0.3s ease;
+}
+
+#darkModeToggle:hover {
+	color: var(--accent-color);
+}
+
+
+/* Main Content Sections */
+main section {
+	padding: 60px 0;
+	border-bottom: 1px solid var(--border-color);
+	transition: border-color 0.3s ease;
+}
+
+main section:last-child {
+	border-bottom: none;
+}
+
+main h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2.2em;
+	font-weight: 600;
+	color: var(--heading-color);
+	margin-bottom: 40px;
+	text-align: center;
+	position: relative;
+	padding-bottom: 15px;
+	transition: color 0.3s ease;
+}
+
+main h2::after {
+	content: '';
+	display: block;
+	width: 70px;
+	height: 3px;
+	background-color: var(--accent-color);
+	margin: 15px auto 0;
+	border-radius: 2px;
+	transition: background-color 0.3s ease;
+}
+
+/* About Section */
+#about {
+	text-align: center;
+}
+#about p {
+	font-size: 1.1em;
+	color: var(--text-color); /* Use variable */
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	transition: color 0.3s ease;
+}
+
+.profile-image-container {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.profile-photo {
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 5px solid var(--profile-border-color); /* Use variable */
+	box-shadow: 0 4px 15px var(--shadow-color);
+	transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.profile-photo-placeholder {
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	background-color: var(--placeholder-bg); /* Use variable */
+	color: var(--placeholder-text); /* Use variable */
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-size: 1em;
+	border: 3px dashed var(--placeholder-border); /* Use variable */
+	transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+
+/* Publications Section */
+.update-instr {
+	font-style: italic;
+	color: var(--placeholder-text); /* Use variable */
+	text-align: center;
+	margin-bottom: 30px;
+	font-size: 0.95em;
+	transition: color 0.3s ease;
+}
+.update-instr code {
+	background-color: var(--placeholder-bg); /* Use variable */
+	color: var(--text-color);
+	padding: 3px 6px;
+	border-radius: 4px;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.publication-item {
+	background-color: var(--card-bg-color);
+	border: 1px solid var(--border-color);
+	border-radius: 8px;
+	padding: 25px;
+	margin-bottom: 30px;
+	display: flex;
+	gap: 25px;
+	box-shadow: 0 4px 8px var(--shadow-color);
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.publication-item:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 16px var(--shadow-color); /* Adjust shadow for dark mode if needed */
+}
+
+.publication-image-area {
+	flex-shrink: 0;
+	width: 200px;
+}
+
+.publication-image-area img {
+	width: 100%;
+	height: 120px;
+	object-fit: cover;
+	border-radius: 6px;
+	border: 1px solid var(--border-color);
+	transition: border-color 0.3s ease;
+}
+
+.publication-image-placeholder {
+	width: 100%;
+	height: 120px;
+	background-color: var(--placeholder-bg);
+	border: 2px dashed var(--placeholder-border);
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: var(--placeholder-text);
+	font-size: 0.8em;
+	padding: 10px;
+	transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.publication-image-placeholder span:first-child {
+	font-weight: bold;
+	word-break: break-word;
+}
+
+.publication-content {
+	flex-grow: 1;
+}
+
+.publication-title {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.35em;
+	font-weight: 600;
+	color: var(--accent-color);
+	margin-bottom: 10px;
+	transition: color 0.3s ease;
+}
+
+.publication-authors {
+	font-size: 0.9em;
+	margin-bottom: 10px;
+	color: var(--text-color); /* Use variable, adjust if too light/dark */
+	line-height: 1.5;
+	transition: color 0.3s ease;
+}
+.publication-authors strong {
+	color: var(--heading-color); /* Use variable */
+	font-weight: 600;
+	transition: color 0.3s ease;
+}
+
+.publication-venue {
+	font-size: 0.9em;
+	color: var(--placeholder-text); /* Use variable for secondary text */
+	margin-bottom: 12px;
+	transition: color 0.3s ease;
+}
+.publication-venue em {
+	font-style: normal;
+	color: var(--text-color); /* Use variable */
+	font-weight: 600;
+	transition: color 0.3s ease;
+}
+.publication-details {
+	font-size: 0.9em;
+}
+
+.publication-links a {
+	text-decoration: none;
+	color: var(--accent-color);
+	margin-right: 15px;
+	font-size: 0.9em;
+	font-weight: 600;
+	transition: color 0.3s ease;
+}
+.publication-links a:hover {
+	color: var(--accent-color-darker);
+	text-decoration: underline;
+}
+.publication-links i {
+	margin-right: 6px;
+}
+
+
+/* Contact Section */
+#contact {
+	text-align: center;
+}
+.social-icons {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 25px;
+}
+.social-icons li {
+	display: inline-block;
+	margin: 0 12px;
+}
+.social-icons a {
+	color: var(--icon-color); /* Use variable */
+	text-decoration: none;
+	font-size: 2em;
+	transition: color 0.3s ease, transform 0.3s ease;
+	display: inline-block;
+}
+.social-icons a:hover {
+	color: var(--accent-color);
+	transform: translateY(-3px);
+}
+.social-icons .social-label {
+	display: block;
+	font-size: 0.5em;
+	margin-top: 2px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	color: var(--placeholder-text); /* Use variable */
+	transition: color 0.3s ease;
+}
+.social-icons a:hover .social-label {
+	color: var(--accent-color);
+}
+
+#contact p {
+	font-size: 1.05em;
+	color: var(--text-color);
+	transition: color 0.3s ease;
+}
+#contact p a {
+	color: var(--accent-color);
+	text-decoration: none;
+	font-weight: 600;
+	transition: color 0.3s ease;
+}
+#contact p a:hover {
+	text-decoration: underline;
+	color: var(--accent-color-darker);
+}
+
+
+/* Footer */
+footer {
+	text-align: center;
+	padding: 30px 0;
+	background-color: var(--footer-bg-color);
+	color: var(--footer-text-color);
+	font-size: 0.9em;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+footer a {
+	color: var(--footer-link-color);
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+footer a:hover {
+	text-decoration: underline;
+}
+
+/* Back to Top Button */
+#backToTopBtn {
+	display: none; /* Hidden by default */
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	z-index: 99;
+	border: none;
+	outline: none;
+	background-color: var(--accent-color);
+	color: white;
+	cursor: pointer;
+	padding: 12px 15px; /* Made slightly less square */
+	border-radius: 50%; /* Circular */
+	font-size: 1.2em; /* Icon size */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#backToTopBtn:hover {
+	background-color: var(--accent-color-darker);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	body {
+		font-size: 15px;
+	}
+	header h1 {
+		font-size: 2.2em;
+	}
+	header .tagline {
+		font-size: 1.1em;
+	}
+	nav ul li {
+		margin: 0 10px; /* Adjusted margin for nav items */
+	}
+	#darkModeToggle {
+		margin-left: 5px; /* Adjust margin for smaller screens */
+	}
+	main h2 {
+		font-size: 1.9em;
+	}
+	.publication-item {
+		flex-direction: column;
+	}
+	.publication-image-area {
+		width: 100%;
+		max-width: 250px;
+		align-self: center;
+		margin-bottom: 20px;
+	}
+	.publication-image-area img,
+	.publication-image-placeholder {
+		height: 150px;
+	}
+	.social-icons a {
+		font-size: 1.8em;
+	}
+	#backToTopBtn {
+		bottom: 20px;
+		right: 20px;
+		padding: 10px 13px;
+		font-size: 1.1em;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		width: 95%;
+	}
+	header h1 {
+		font-size: 1.8em;
+	}
+	/* Keep nav items inline but allow wrap if needed */
+	nav ul {
+		flex-wrap: wrap; /* Allow nav items to wrap */
+	}
+	nav ul li {
+		margin: 5px 8px; /* Adjust margin for wrapped items */
+	}
+	.profile-photo, .profile-photo-placeholder {
+		width: 150px;
+		height: 150px;
+	}
+}
+
+/* In your style.css */
+#email-placeholder {
+	color: var(--accent-color);
+	text-decoration: none; /* Remove underline if it inherits one */
+	cursor: pointer;
+	font-weight: 600;
+	display: inline-block; /* For padding and better click area */
+	padding: 2px 5px;
+	border-bottom: 1px dashed var(--accent-color); /* Subtle cue */
+	transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+#email-placeholder:hover,
+#email-placeholder:focus {
+	color: var(--accent-color-darker);
+	border-bottom-style: solid;
+}
+
+#email-placeholder i {
+	margin-right: 5px;
+}
+
+/* Style for the revealed email link if needed,
+   though it will likely inherit from general 'a' tag styles */
+#contact p a[href^="mailto:"] {
+	font-weight: normal; /* Or specific styling for the email link */
+}
