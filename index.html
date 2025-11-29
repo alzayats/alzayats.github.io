@@ -1,91 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Alzayat Saleh - Machine Learning Engineer</title>
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alzayat Saleh | Machine Learning Engineer</title>
+    
+    <!-- Tailwind CSS (via CDN for static hosting) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Config for Tailwind -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                    display: ['Syne', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        card: '#0f0f0f',
+                        primary: '#2dd4bf', /* Teal */
+                        secondary: '#818cf8', /* Indigo */
+                    },
+                    animation: {
+                        'blob': 'blob 10s infinite',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="light-mode"> <!-- Start with light-mode by default -->
-<header>
-	<div class="container">
-		<h1>Alzayat Saleh</h1>
-		<p class="tagline">Machine Learning Engineer</p>
-		<nav>
-			<ul>
-				<li><a href="#about">About</a></li>
-				<li><a href="#publications">Publications</a></li>
-				<li><a href="#contact">Connect</a></li>
-				<li>
-					<!-- Dark/Light Mode Toggle -->
-					<button id="darkModeToggle" aria-label="Toggle dark mode">
-						<i class="fas fa-moon"></i> <!-- Moon icon for dark mode -->
-						<!-- <i class="fas fa-sun"></i> Sun icon for light mode (will be swapped by JS) -->
-					</button>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</header>
+<body class="bg-gray-50 text-slate-900 dark:bg-dark dark:text-gray-100 transition-colors duration-300 relative">
 
-<main>
-	<section id="about" class="container">
-		<h2>About Me</h2>
-		<p>
-<!--			Hello! I'm Alzayat Saleh, a Machine Learning Engineer specializing in computer vision and deep learning applications, particularly in ecological monitoring, medical imaging, and agricultural technology. My work focuses on developing innovative solutions to real-world problems.-->
-			Hello! I’m Alzayat Saleh, a Machine Learning Engineer with a PhD in Deep Learning and Computer Vision. I specialise in computer vision and deep learning applications, particularly in ecological monitoring, medical imaging, and agricultural technology. My work focuses on developing innovative solutions to real-world problems.
-<!--			My work focuses on developing innovative, practical solutions to real-world problems—ranging from underwater image analysis to intelligent systems for aquaculture and agriculture.-->
-			If you’re interested in applying AI to complex environmental or biological systems—or simply want to chat about vision models, or edge AI — <a href="#contact">feel free to get in touch</a>.
-		</p>
-		<div class="profile-image-container">
-			<!-- Add a photo of yourself here if you like -->
-			 <img src="images/profile.jpg" alt="Alzayat Saleh" class="profile-photo">
-<!--			<div class="profile-photo-placeholder">Your Photo Here (e.g., 150x150px)</div>-->
-		</div>
-	</section>
+    <!-- BACKGROUND LAYERS (Fixed Z-Index) -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <!-- Blobs -->
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-primary/30 rounded-full mix-blend-multiply blur-3xl animate-blob"></div>
+        <div class="absolute top-[20%] right-[-10%] w-96 h-96 bg-secondary/30 rounded-full mix-blend-multiply blur-3xl animate-blob" style="animation-delay: 2s"></div>
+        <div class="absolute bottom-[-10%] left-[20%] w-96 h-96 bg-purple-500/30 rounded-full mix-blend-multiply blur-3xl animate-blob" style="animation-delay: 4s"></div>
+        <!-- Noise Texture -->
+        <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%221%22/%3E%3C/svg%3E');"></div>
+    </div>
 
-	<section id="publications" class="container">
-		<h2>Publications</h2>
-<!--		<p class="update-instr">To update publications, edit the <code>bibtexData</code> variable in <code>script.js</code>.</p>-->
-		<div id="publications-list">
-			<!-- Publications will be dynamically inserted here by JavaScript -->
-		</div>
-	</section>
+    <!-- NAVIGATION (Floating Dock) -->
+    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 p-2 rounded-full border border-gray-200 dark:border-white/10 bg-white/80 dark:bg-black/80 backdrop-blur-lg shadow-xl flex items-center gap-1">
+        <a href="#home" class="p-3 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors text-gray-500 dark:text-gray-400 hover:text-primary" aria-label="Home">
+            <i class="fas fa-home"></i>
+        </a>
+        <a href="#publications" class="p-3 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors text-gray-500 dark:text-gray-400 hover:text-primary" aria-label="Publications">
+            <i class="fas fa-layer-group"></i>
+        </a>
+        <a href="#connect" class="p-3 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors text-gray-500 dark:text-gray-400 hover:text-primary" aria-label="Contact">
+            <i class="fas fa-paper-plane"></i>
+        </a>
+        <div class="w-px h-4 bg-gray-300 dark:bg-white/20 mx-1"></div>
+        <button id="themeToggle" class="p-3 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors text-gray-500 dark:text-gray-400">
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+        </button>
+    </nav>
 
-	<section id="contact" class="container">
-		<h2>Connect With Me</h2>
-		<ul class="social-icons">
-			<li><a href="https://github.com/alzayats" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i> <span class="social-label">GitHub</span></a></li>
-			<li><a href="https://twitter.com/alzayats" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i> <span class="social-label">Twitter</span></a></li>
-			<li><a href="https://www.instagram.com/alzayatsaleh/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i> <span class="social-label">Instagram</span></a></li>
-			<li><a href="https://www.linkedin.com/in/alzayat/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i> <span class="social-label">LinkedIn</span></a></li>
-			<li><a href="https://scholar.google.com/citations?user=OaFJvaIAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i> <span class="social-label">Google Scholar</span></a></li>
-			<li><a href="https://www.youtube.com/@alzdeeplearning3459" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i> <span class="social-label">YouTube</span></a></li>
-		</ul>
-<!--		<p>You can also reach me via email: <a href="mailto:your-email@example.com">your-email@example.com</a>.</p>-->
-		<!-- In your #contact section -->
-		<p>
-			You can also reach me via email:
-			<span id="email-placeholder" title="Click to reveal email">
-        <i class="fas fa-envelope"></i> Show Email Address
-    </span>
-			<noscript>Please enable JavaScript to see my email address.</noscript>
-		</p>
-	</section>
-</main>
+    <!-- MAIN CONTENT -->
+    <main class="container mx-auto px-6 md:px-12 max-w-6xl pt-24 pb-40 z-10 relative">
+        
+        <!-- HERO SECTION -->
+        <section id="home" class="min-h-[80vh] flex flex-col justify-center items-start fade-section">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-6">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                PhD Computer Vision
+            </div>
+            
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] mb-8">
+                Visualizing <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Intelligence.</span>
+            </h1>
+            
+            <p class="font-sans text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed mb-10">
+                I'm <strong>Alzayat Saleh</strong>. I engineer deep learning systems that bridge the gap between theoretical models and real-world deployment in ecology, healthcare, and robotics.
+            </p>
 
-<footer>
-	<div class="container">
-		<p>© <span id="current-year"></span> Alzayat Saleh. All rights reserved.</p>
-	</div>
-</footer>
+            <div class="flex gap-4">
+                <a href="#publications" class="bg-slate-900 dark:bg-white text-white dark:text-black px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform">
+                    My Work
+                </a>
+                <a href="#connect" class="px-8 py-3 rounded-full border border-gray-300 dark:border-white/20 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors">
+                    Contact
+                </a>
+            </div>
+        </section>
 
-<!-- Back to Top Button -->
-<button id="backToTopBtn" title="Go to top">
-	<i class="fas fa-arrow-up"></i>
-</button>
+        <!-- STATS -->
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-32 fade-section">
+            <div class="p-6 rounded-2xl bg-white/50 dark:bg-white/5 border border-gray-200 dark:border-white/10 backdrop-blur-sm">
+                <div class="text-3xl font-display font-bold mb-1">20+</div>
+                <div class="text-xs uppercase tracking-widest opacity-60">Publications</div>
+            </div>
+            <div class="p-6 rounded-2xl bg-white/50 dark:bg-white/5 border border-gray-200 dark:border-white/10 backdrop-blur-sm">
+                <div class="text-3xl font-display font-bold mb-1">900+</div>
+                <div class="text-xs uppercase tracking-widest opacity-60">Citations</div>
+            </div>
+            <div class="p-6 rounded-2xl bg-white/50 dark:bg-white/5 border border-gray-200 dark:border-white/10 backdrop-blur-sm">
+                <div class="text-3xl font-display font-bold mb-1">PhD</div>
+                <div class="text-xs uppercase tracking-widest opacity-60">Deep Learning</div>
+            </div>
+            <div class="p-6 rounded-2xl bg-white/50 dark:bg-white/5 border border-gray-200 dark:border-white/10 backdrop-blur-sm">
+                <div class="text-3xl font-display font-bold mb-1">AU</div>
+                <div class="text-xs uppercase tracking-widest opacity-60">Based</div>
+            </div>
+        </section>
 
-<script src="script.js"></script>
+        <!-- PUBLICATIONS -->
+        <section id="publications" class="mb-32">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 fade-section">
+                <div>
+                    <h2 class="font-display text-4xl font-bold mb-2">Research</h2>
+                    <p class="text-gray-500 dark:text-gray-400">Recent contributions to Deep Learning & Vision.</p>
+                </div>
+                <!-- Filters -->
+                <div class="flex gap-2 mt-4 md:mt-0">
+                    <button class="filter-btn active px-4 py-2 text-sm rounded-full bg-slate-900 dark:bg-white text-white dark:text-black" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-2 text-sm rounded-full border border-gray-200 dark:border-white/20 hover:bg-gray-100 dark:hover:bg-white/10" data-filter="article">Journals</button>
+                    <button class="filter-btn px-4 py-2 text-sm rounded-full border border-gray-200 dark:border-white/20 hover:bg-gray-100 dark:hover:bg-white/10" data-filter="inproceedings">Conferences</button>
+                </div>
+            </div>
+
+            <!-- Grid Container -->
+            <div id="publications-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- JS will inject items here -->
+                <div class="col-span-full text-center py-10 opacity-50">Loading Publications...</div>
+            </div>
+        </section>
+
+        <!-- CONNECT -->
+        <section id="connect" class="max-w-4xl mx-auto fade-section">
+            <div class="relative p-8 md:p-12 rounded-3xl bg-white dark:bg-card border border-gray-200 dark:border-white/10 shadow-2xl overflow-hidden">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="relative">
+                        <img src="images/profile.jpg" alt="Profile" class="w-32 h-32 rounded-full object-cover border-4 border-white dark:border-black bg-gray-200" onerror="this.src='https://ui-avatars.com/api/?name=Alzayat+Saleh&background=random'">
+                        <div class="absolute bottom-2 right-2 w-5 h-5 bg-green-500 border-4 border-white dark:border-black rounded-full"></div>
+                    </div>
+                    <div class="text-center md:text-left flex-1">
+                        <h2 class="font-display text-3xl font-bold mb-2">Let's Connect</h2>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Open to collaborations in AI, marine robotics, and agricultural tech.</p>
+                        
+                        <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                            <button id="email-btn" class="px-6 py-2 rounded-xl bg-gray-100 dark:bg-white/10 hover:bg-primary hover:text-black transition-colors font-medium">
+                                <i class="fas fa-envelope mr-2"></i> Reveal Email
+                            </button>
+                            <a href="https://github.com/alzayats" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-white/10 hover:bg-black hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                            <a href="https://twitter.com/alzayats" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-white/10 hover:bg-blue-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                            <a href="https://linkedin.com/in/alzayat" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-white/10 hover:bg-blue-700 hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://scholar.google.com/citations?user=OaFJvaIAAAAJ" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-white/10 hover:bg-blue-500 hover:text-white transition-colors"><i class="fas fa-graduation-cap"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-20 text-center text-sm text-gray-500 font-mono">
+            &copy; <span id="year"></span> Alzayat Saleh.
+        </footer>
+
+    </main>
+
+    <!-- Modal -->
+    <div id="bibtex-modal" class="fixed inset-0 z-[100] hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-[#1a1a1a] w-full max-w-2xl rounded-2xl shadow-2xl border border-white/10 transform transition-all p-6 relative">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-red-500"><i class="fas fa-times text-xl"></i></button>
+            <h3 class="font-bold text-xl mb-4">Citation (BibTeX)</h3>
+            <pre id="bibtex-text" class="bg-gray-100 dark:bg-black p-4 rounded-lg overflow-x-auto text-xs font-mono text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-white/10 max-h-64"></pre>
+            <button id="copy-btn" class="mt-4 px-4 py-2 bg-primary text-black font-bold rounded hover:opacity-90">Copy to Clipboard</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

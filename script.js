@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-	// --- BIBTEX DATA ---
-	// To update your publications, modify the string below.
-	// Ensure each entry starts with @ and ends with a closing brace }.
-	// Commas separate fields within an entry.
-	const bibtexData = `
+    const EMAIL_USER = 'alzayat.saleh'; 
+    const EMAIL_DOMAIN = 'my.jcu.edu.au'; 
+    
+    // BibTeX Data
+    const bibtexData = `
 @article{konovalov2018estimating,
 title={Estimating mass of harvested Asian seabass Lates calcarifer from images},
 author={Konovalov, Dmitry A and Saleh, Alzayat and Efremova, Dina B and Domingos, Jose A and Jerry, Dean R},
@@ -182,340 +182,265 @@ pages={110365},
 year={2025},
 publisher={Elsevier}
 }
+
+@article{haghighat2025multimodal,
+  title={Multimodal Language Models in Agriculture: A Tutorial and Survey},
+  author={Haghighat, Mohammadreza and Saleh, Alzayat and Azghadi, Mostafa Rahimi},
+  journal={Authorea Preprints},
+  year={2025},
+  publisher={Authorea}
+}
+
+@article{saleh2025weed,
+  title={Weed Detection in Challenging Field Conditions: A Semi-Supervised Framework for Overcoming Shadow Bias and Data Scarcity},
+  author={Saleh, Alzayat and Hatano, Shunsuke and Azghadi, Mostafa Rahimi},
+  journal={arXiv preprint arXiv:2508.19511},
+  year={2025}
+}
+
+@article{sankar2025artificial,
+  title={Artificial Intelligence in Aquaculture: Current Applications and Future Directions},
+  author={Sankar, Vinu and Saleh, Alzayat and Ehrampoosh, Armin and Arbon, Phoebe and Jerry, Dean R and Azghadi, Mostafa Rahimi},
+  journal={Authorea Preprints},
+  year={2025},
+  publisher={Authorea}
+}
+
+
     `;
-	// --- END OF BIBTEX DATA ---
 
-	// --- DOM Elements ---
-	const publicationsListElement = document.getElementById('publications-list');
-	const yearSpan = document.getElementById('current-year');
-	const backToTopBtn = document.getElementById('backToTopBtn');
-	const darkModeToggle = document.getElementById('darkModeToggle');
-	const body = document.body;
+    // 1. GENERATIVE ART FALLBACK
+    function generatePattern(string) {
+        let hash = 0;
+        for (let i = 0; i < string.length; i++) hash = string.charCodeAt(i) + ((hash << 5) - hash);
+        const h1 = Math.abs(hash % 360);
+        const h2 = (h1 + 40) % 360;
+        return `
+        <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="g${hash}" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0%" stop-color="hsl(${h1}, 70%, 60%)" />
+                    <stop offset="100%" stop-color="hsl(${h2}, 70%, 40%)" />
+                </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#g${hash})" />
+            <circle cx="${Math.abs(hash)%100}" cy="${Math.abs(hash*2)%100}" r="40" fill="white" fill-opacity="0.1" />
+        </svg>`;
+    }
 
+    // 2. PARSER
+    function parseBibtex(str) {
+        const entries = [];
+        const rawEntries = str.split(/@(?=\w+{)/).slice(1);
+        rawEntries.forEach(raw => {
+            try {
+                const typeEnd = raw.indexOf('{');
+                const type = raw.substring(0, typeEnd).trim().toLowerCase();
+                const body = raw.substring(typeEnd + 1, raw.lastIndexOf('}'));
+                const keyEnd = body.indexOf(',');
+                const key = body.substring(0, keyEnd).trim();
+                const entry = { type, key, raw: '@' + raw.trim() };
+                
+                const regex = /(\w+)\s*=\s*(\{.*?\}|"[^"]*"|\d+)/gs;
+                let match;
+                while ((match = regex.exec(body)) !== null) {
+                    const field = match[1].toLowerCase();
+                    let val = match[2];
+                    if (val.startsWith('{') || val.startsWith('"')) val = val.slice(1, -1);
+                    entry[field] = val.replace(/\s+/g, ' ').trim();
+                }
+                entries.push(entry);
+            } catch (e) {
+                console.log("Error parsing entry", e);
+            }
+        });
+        return entries;
+    }
 
-	// --- BibTeX Parsing and Rendering (Keep your existing functions) ---
-	function parseBibtex(bibtexString) {
-		// ... (your existing parseBibtex function)
-		// Make sure your parser correctly extracts the 'key' field (e.g., konovalov2018estimating)
-		// from entries like @article{konovalov2018estimating, ...}
-		// The previous version of the parser did this by looking at the string between @type{ and the first comma.
-		// If your keys have special characters, ensure the parser and image filename generation handle them.
-		// A simple way to get the key is:
-		// const keyAndContent = entryText.substring(firstBraceIndex + 1).trim();
-		// const firstCommaIndex = keyAndContent.indexOf(',');
-		// entry.key = keyAndContent.substring(0, firstCommaIndex).trim();
-		// This was already in the previous version.
+    // 3. IMAGE LOADER
+    function loadImage(container, key) {
+        // Keeps hyphens and underscores, lowercase
+        const cleanKey = key.toLowerCase().replace(/[.:\s]/g, '_'); 
+        const extensions = ['png', 'jpg', 'jpeg', 'webp'];
+        let idx = 0;
 
-		const entries = [];
-		const bibtexEntries = bibtexString.trim().split('@').slice(1);
+        function tryNext() {
+            if (idx >= extensions.length) return; 
+            const img = new Image();
+            img.src = `images/${cleanKey}.${extensions[idx]}`;
+            img.className = "absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500";
+            img.onload = () => {
+                container.innerHTML = ''; // Clear SVG
+                container.appendChild(img);
+                setTimeout(() => img.classList.remove('opacity-0'), 10);
+            };
+            img.onerror = () => {
+                idx++;
+                tryNext();
+            };
+        }
+        tryNext();
+    }
 
-		for (const entryText of bibtexEntries) {
-			if (!entryText.trim()) continue;
+    // 4. RENDER
+    const grid = document.getElementById('publications-grid');
+    function render(list) {
+        if (!grid) return;
+        grid.innerHTML = '';
+        list.sort((a, b) => (b.year || 0) - (a.year || 0));
 
-			const entry = {};
-			const firstBraceIndex = entryText.indexOf('{');
-			if (firstBraceIndex === -1) continue;
+        list.forEach((pub, index) => {
+            const isFeatured = index === 0;
+            const card = document.createElement('div');
+            card.className = `pub-card relative flex flex-col bg-white dark:bg-card border border-gray-200 dark:border-white/10 rounded-2xl overflow-hidden ${isFeatured ? 'md:col-span-2' : ''}`;
+            
+            // Image
+            const imgDiv = document.createElement('div');
+            imgDiv.className = `w-full ${isFeatured ? 'h-64' : 'h-48'} bg-gray-100 dark:bg-[#1a1a1a] relative overflow-hidden`;
+            imgDiv.innerHTML = generatePattern(pub.title);
+            if (pub.key) loadImage(imgDiv, pub.key);
 
-			const typeAndKey = entryText.substring(0, firstBraceIndex).trim();
-			const typeMatch = typeAndKey.match(/^([a-zA-Z]+)/);
-			entry.type = typeMatch ? typeMatch[1].toLowerCase() : 'misc';
+            // Content
+            const body = document.createElement('div');
+            body.className = "p-6 flex flex-col flex-1";
+            
+            const badge = document.createElement('span');
+            badge.className = "text-xs font-bold uppercase tracking-wider text-primary mb-2";
+            badge.textContent = pub.type === 'inproceedings' ? 'Conference' : 'Journal';
 
-			const keyAndContent = entryText.substring(firstBraceIndex + 1).trim();
-			const firstCommaIndex = keyAndContent.indexOf(',');
-			if (firstCommaIndex === -1) continue;
+            const title = document.createElement('h3');
+            title.className = `font-display font-bold text-slate-900 dark:text-white mb-3 ${isFeatured ? 'text-2xl' : 'text-lg'} leading-tight`;
+            title.textContent = pub.title;
 
-			// The key is the string before the first comma after the opening brace
-			let bibKey = keyAndContent.substring(0, firstCommaIndex).trim();
-			entry.key = bibKey; // Store the raw key
+            const authors = document.createElement('p');
+            authors.className = "text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2";
+            if (pub.author) {
+                // Safe replace
+                const me = /(Alzayat Saleh|Saleh, Alzayat|Saleh, A\.)/gi;
+                authors.innerHTML = pub.author.replace(me, '<strong class="text-slate-900 dark:text-white">$1</strong>');
+            }
 
-			const content = keyAndContent.substring(firstCommaIndex + 1, keyAndContent.lastIndexOf('}')).trim();
+            const footer = document.createElement('div');
+            footer.className = "mt-auto pt-4 border-t border-gray-100 dark:border-white/10 flex items-center justify-between";
+            
+            const venue = document.createElement('span');
+            venue.className = "text-xs font-mono text-gray-400 truncate max-w-[60%]";
+            venue.textContent = `${pub.year} | ${pub.journal || pub.booktitle || 'Preprint'}`;
 
-			let currentPos = 0;
-			let braceLevel = 0;
-			const rawFields = [];
+            const links = document.createElement('div');
+            links.className = "flex gap-2";
+            
+            // Helper: Create Link
+            const makeLink = (icon, href, tooltip) => {
+                const a = document.createElement('a');
+                a.href = href; a.target = "_blank";
+                a.className = "text-gray-400 hover:text-primary transition-colors";
+                a.innerHTML = `<i class="${icon}"></i>`;
+                a.title = tooltip; // Add tooltip on hover
+                return a;
+            };
 
-			for (let i = 0; i < content.length; i++) {
-				const char = content[i];
-				if (char === '{') braceLevel++;
-				else if (char === '}') braceLevel--;
-				else if (char === ',' && braceLevel === 0) {
-					rawFields.push(content.substring(currentPos, i).trim());
-					currentPos = i + 1;
-				}
-			}
-			rawFields.push(content.substring(currentPos).trim());
+            // Helper: Create Button (for BibTeX)
+            const makeBtn = (icon, fn, tooltip) => {
+                const b = document.createElement('button');
+                b.className = "text-gray-400 hover:text-primary transition-colors";
+                b.innerHTML = `<i class="${icon}"></i>`;
+                b.title = tooltip;
+                b.onclick = fn;
+                return b;
+            };
 
-			for (const rawField of rawFields) {
-				if (!rawField) continue;
-				const eqIndex = rawField.indexOf('=');
-				if (eqIndex > 0) {
-					const key = rawField.substring(0, eqIndex).trim().toLowerCase();
-					let value = rawField.substring(eqIndex + 1).trim();
+            // 1. Google Scholar Link (NEW: Added this!)
+            if (pub.title) {
+                links.appendChild(makeLink(
+                    'fas fa-graduation-cap', 
+                    `https://scholar.google.com/scholar?q=${encodeURIComponent(pub.title)}`,
+                    'View on Google Scholar'
+                ));
+            }
 
-					if (value.startsWith('{') && value.endsWith('}')) {
-						value = value.substring(1, value.length - 1);
-					} else if (value.startsWith('"') && value.endsWith('"')) {
-						value = value.substring(1, value.length - 1);
-					}
-					entry[key] = value.replace(/[\n\r]+/g, ' ').replace(/\s{2,}/g, ' ').trim();
-				}
-			}
-			entries.push(entry);
-		}
-		return entries;
-	}
+            // 2. DOI
+            if (pub.doi) links.appendChild(makeLink('fas fa-link', `https://doi.org/${pub.doi}`, 'DOI'));
+            
+            // 3. PDF
+            if (pub.pdf) links.appendChild(makeLink('fas fa-file-pdf', pub.pdf, 'PDF'));
+            
+            // 4. BibTeX Button
+            links.appendChild(makeBtn('fas fa-quote-right', () => openModal(pub.raw), 'Copy BibTeX'));
 
-	function highlightAuthor(authorsString) {
-		// ... (your existing highlightAuthor function)
-		if (!authorsString) return '';
-		const mainAuthorPattern = /(Alzayat Saleh|Saleh, Alzayat|Saleh, A\.)/gi;
-		return authorsString.replace(mainAuthorPattern, '<strong>$1</strong>');
-	}
+            footer.appendChild(venue);
+            footer.appendChild(links);
+            body.appendChild(badge);
+            body.appendChild(title);
+            body.appendChild(authors);
+            body.appendChild(footer);
+            card.appendChild(imgDiv);
+            card.appendChild(body);
+            grid.appendChild(card);
+        });
+    }
 
-	function renderPublications(publications) {
-		// ... (your existing renderPublications function with the image loading logic)
-		// Ensure it uses the 'key' field from the parsed BibTeX for image filenames.
-		// For example: const imgFilename = pub.key ? `images/${pub.key.toLowerCase().replace(/[.:]/g, '_')}.png` : null;
-		const listElement = publicationsListElement; // Use the cached element
-		if (!listElement) return;
-		listElement.innerHTML = ''; // Clear previous publications if any
+    // 5. INTERACTION
+    // Theme
+    const html = document.documentElement;
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        html.classList.add('dark');
+    }
+    document.getElementById('themeToggle').addEventListener('click', () => {
+        html.classList.toggle('dark');
+        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
 
-		publications.sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
+    // Email
+    document.getElementById('email-btn').addEventListener('click', function() {
+        const addr = `${EMAIL_USER}@${EMAIL_DOMAIN}`;
+        this.innerHTML = `<i class="fas fa-envelope-open mr-2"></i> ${addr}`;
+        window.location.href = `mailto:${addr}`;
+    });
 
-		publications.forEach(pub => {
-			const item = document.createElement('div');
-			item.className = 'publication-item';
+    // Modal
+    const modal = document.getElementById('bibtex-modal');
+    const modalText = document.getElementById('bibtex-text');
+    window.openModal = function(text) {
+        modalText.textContent = text;
+        modal.classList.remove('hidden');
+    };
+    document.getElementById('close-modal').addEventListener('click', () => modal.classList.add('hidden'));
+    document.getElementById('copy-btn').addEventListener('click', function() {
+        navigator.clipboard.writeText(modalText.textContent);
+        const original = this.textContent;
+        this.textContent = "Copied!";
+        setTimeout(() => this.textContent = original, 2000);
+    });
 
-			const imageArea = document.createElement('div');
-			imageArea.className = 'publication-image-area';
+    // Filter
+    const allPubs = parseBibtex(bibtexData);
+    render(allPubs);
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.classList.remove('bg-slate-900', 'text-white', 'dark:bg-white', 'dark:text-black');
+                b.classList.add('bg-transparent', 'border');
+            });
+            btn.classList.remove('bg-transparent', 'border');
+            btn.classList.add('bg-slate-900', 'text-white', 'dark:bg-white', 'dark:text-black');
+            
+            const filter = btn.dataset.filter;
+            if (filter === 'all') render(allPubs);
+            else render(allPubs.filter(p => p.type === filter));
+        });
+    });
 
-			const rawKey = pub.key || ''; // Get the raw key
-			const sanitizedKey = rawKey.toLowerCase().replace(/[.:\s]/g, '_'); // Sanitize for filename
-			const baseImgFilename = sanitizedKey ? `images/${sanitizedKey}` : null;
-
-			const placeholder = document.createElement('div');
-			placeholder.className = 'publication-image-placeholder';
-			const imgSuggestion = baseImgFilename ? `${sanitizedKey}.png` : 'paper_image.png';
-			placeholder.innerHTML = `<span>Image: <br><code>${imgSuggestion}</code></span><span>(e.g., 200x120px)</span>`;
-
-			if (baseImgFilename) {
-				const imgElement = document.createElement('img');
-				imgElement.alt = `Visual for ${pub.title || 'publication'}`;
-				// Styles are now in CSS, but you can set defaults here if needed
-				// imgElement.style.width = "100%";
-				// imgElement.style.height = "120px";
-				// imgElement.style.objectFit = "cover";
-				// imgElement.style.borderRadius = "6px";
-
-				let imageLoaded = false;
-				const extensions = ['png', 'jpg', 'jpeg', 'gif', 'webp']; // Common image extensions
-
-				const attemptLoad = (index) => {
-					if (index >= extensions.length) {
-						if (!imageLoaded) imageArea.appendChild(placeholder); // All attempts failed
-						return;
-					}
-					const ext = extensions[index];
-					imgElement.src = `${baseImgFilename}.${ext}`;
-					imgElement.onload = () => {
-						if (!imageLoaded) { // Ensure only one image is appended
-							imageArea.innerHTML = ''; // Clear previous attempts or placeholder
-							imageArea.appendChild(imgElement);
-							imageLoaded = true;
-						}
-					};
-					imgElement.onerror = () => {
-						attemptLoad(index + 1); // Try next extension
-					};
-				};
-				attemptLoad(0); // Start with the first extension (png)
-
-			} else {
-				imageArea.appendChild(placeholder);
-			}
-
-			const content = document.createElement('div');
-			content.className = 'publication-content';
-
-			const title = document.createElement('h3');
-			title.className = 'publication-title';
-			title.textContent = pub.title || 'Untitled Publication';
-			content.appendChild(title);
-
-			const authors = document.createElement('p');
-			authors.className = 'publication-authors';
-			authors.innerHTML = `<strong>Authors:</strong> ${highlightAuthor(pub.author || 'N/A')}`;
-			content.appendChild(authors);
-
-			const venue = document.createElement('p');
-			venue.className = 'publication-venue';
-			let venueText = `<em>${pub.journal || pub.booktitle || pub.school || 'N/A'}</em>`;
-
-			let detailsArray = [];
-			if (pub.year) detailsArray.push(pub.year);
-			if (pub.volume) detailsArray.push(`Vol. ${pub.volume}`);
-			if (pub.number) detailsArray.push(`No. ${pub.number}`);
-			if (pub.pages) detailsArray.push(`pp. ${pub.pages}`);
-			if (pub.publisher && pub.publisher.toLowerCase() !== (pub.journal || pub.booktitle || '').toLowerCase()) {
-				if (!(pub.organization && pub.publisher.toLowerCase() === pub.organization.toLowerCase())) {
-					detailsArray.push(pub.publisher);
-				}
-			}
-			if (pub.organization && pub.organization.toLowerCase() !== pub.publisher?.toLowerCase()) {
-				detailsArray.push(pub.organization);
-			}
-
-			if (detailsArray.length > 0) {
-				venueText += `, <span class="publication-details">${detailsArray.join(', ')}</span>`;
-			}
-			venue.innerHTML = venueText;
-			content.appendChild(venue);
-
-			const links = document.createElement('div');
-			links.className = 'publication-links';
-			if (pub.title) {
-				const scholarLink = document.createElement('a');
-				scholarLink.href = `https://scholar.google.com/scholar?q=${encodeURIComponent(pub.title + " " + (pub.author || ""))}`;
-				scholarLink.target = '_blank';
-				scholarLink.innerHTML = '<i class="fas fa-graduation-cap"></i> Google Scholar';
-				links.appendChild(scholarLink);
-			}
-			if (pub.doi) {
-				const doiLink = document.createElement('a');
-				doiLink.href = `https://doi.org/${pub.doi}`;
-				doiLink.target = '_blank';
-				doiLink.innerHTML = '<i class="fas fa-link"></i> DOI';
-				links.appendChild(doiLink);
-			}
-			if (pub.url && !pub.doi) {
-				if (!pub.url.startsWith('http://doi.org') && !pub.url.startsWith('https://doi.org')) {
-					const urlLink = document.createElement('a');
-					urlLink.href = pub.url;
-					urlLink.target = '_blank';
-					urlLink.innerHTML = '<i class="fas fa-external-link-alt"></i> Link';
-					links.appendChild(urlLink);
-				}
-			}
-			if (pub.pdf) {
-				const pdfLink = document.createElement('a');
-				pdfLink.href = pub.pdf;
-				pdfLink.target = '_blank';
-				pdfLink.innerHTML = '<i class="fas fa-file-pdf"></i> PDF';
-				links.appendChild(pdfLink);
-			}
-			content.appendChild(links);
-
-			item.appendChild(imageArea);
-			item.appendChild(content);
-			listElement.appendChild(item);
-		});
-	}
-
-	// --- Footer Year ---
-	if (yearSpan) {
-		yearSpan.textContent = new Date().getFullYear();
-	}
-
-	// --- Back to Top Button Logic ---
-	if (backToTopBtn) {
-		window.onscroll = function() {
-			if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-				backToTopBtn.style.display = "block";
-				setTimeout(() => backToTopBtn.style.opacity = "1", 10); // Fade in
-			} else {
-				backToTopBtn.style.opacity = "0";
-				setTimeout(() => backToTopBtn.style.display = "none", 300); // Fade out then hide
-			}
-		};
-
-		backToTopBtn.addEventListener('click', function() {
-			window.scrollTo({ top: 0, behavior: 'smooth' });
-		});
-	}
-
-	// --- Dark/Light Mode Toggle Logic ---
-	if (darkModeToggle && body) {
-		// Function to apply the saved theme or default
-		function applyTheme(theme) {
-			if (theme === 'dark') {
-				body.classList.remove('light-mode');
-				body.classList.add('dark-mode');
-				darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Sun icon
-				localStorage.setItem('theme', 'dark');
-			} else {
-				body.classList.remove('dark-mode');
-				body.classList.add('light-mode');
-				darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Moon icon
-				localStorage.setItem('theme', 'light');
-			}
-		}
-
-		// Check for saved theme in localStorage
-		const savedTheme = localStorage.getItem('theme');
-		// Check for prefers-color-scheme
-		const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-		if (savedTheme) {
-			applyTheme(savedTheme);
-		} else if (prefersDark) {
-			applyTheme('dark'); // Default to system preference if no saved theme
-		} else {
-			applyTheme('light'); // Default to light if no saved theme and no system preference for dark
-		}
-
-		darkModeToggle.addEventListener('click', function() {
-			if (body.classList.contains('light-mode')) {
-				applyTheme('dark');
-			} else {
-				applyTheme('light');
-			}
-		});
-
-		// Listen for changes in system preference
-		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-			if (!localStorage.getItem('theme')) { // Only apply if user hasn't manually set a theme
-				applyTheme(e.matches ? 'dark' : 'light');
-			}
-		});
-	}
-
-	// --- Email Obfuscation ---
-	const emailPlaceholder = document.getElementById('email-placeholder');
-	if (emailPlaceholder) {
-		// Define your email parts here to make it harder for simple regex scrapers
-		const user = 'alzayat.saleh'; // Replace with your email username
-		const domain = 'my.jcu.edu.au';   // Replace with your email domain
-		const emailAddress = user + '@' + domain;
-
-		emailPlaceholder.addEventListener('click', function(event) {
-			event.preventDefault(); // Prevent any default action if it were a link already
-			const mailtoLink = document.createElement('a');
-			mailtoLink.href = 'mailto:' + emailAddress;
-			mailtoLink.textContent = emailAddress;
-
-			// Replace the placeholder with the actual mailto link
-			emailPlaceholder.parentNode.replaceChild(mailtoLink, emailPlaceholder);
-
-			// Optionally, try to open the mail client directly after revealing
-			// window.location.href = 'mailto:' + emailAddress;
-		});
-
-		// For better accessibility, allow revealing with Enter key if focused
-		emailPlaceholder.style.cursor = 'pointer'; // Indicate it's clickable
-		emailPlaceholder.setAttribute('role', 'button');
-		emailPlaceholder.setAttribute('tabindex', '0'); // Make it focusable
-
-		emailPlaceholder.addEventListener('keydown', function(event) {
-			if (event.key === 'Enter' || event.key === ' ') {
-				event.preventDefault();
-				this.click(); // Trigger the click event handler
-			}
-		});
-	}
-
-
-	// --- Main execution ---
-	const publications = parseBibtex(bibtexData);
-	renderPublications(publications);
+    // Animations
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) e.target.classList.add('visible');
+        });
+    });
+    document.querySelectorAll('.fade-section').forEach(el => observer.observe(el));
+    
+    // Year
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
 
 });
