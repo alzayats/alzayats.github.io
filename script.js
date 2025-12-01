@@ -205,7 +205,18 @@ publisher={Elsevier}
   year={2025},
   publisher={Authorea}
 }
-
+@article{JAHANBAKHT2026119070,
+title = {Linking fish activity and turbidity through visual and sensor data fusion and deep learning},
+journal = {Marine Pollution Bulletin},
+volume = {223},
+pages = {119070},
+year = {2026},
+issn = {0025-326X},
+doi = {https://doi.org/10.1016/j.marpolbul.2025.119070},
+url = {https://www.sciencedirect.com/science/article/pii/S0025326X25015462},
+author = {Mohammad Jahanbakht and Andrea Tiernan and Alzayat Saleh and Nichola Stokes and Odette Langham and Mostafa {Rahimi Azghadi} and Nathan J. Waltham},
+keywords = {Turbid water monitoring, Fish detection, Turbidity estimation, Deep learning, Image and sensor fusion}
+}
 
     `;
 
