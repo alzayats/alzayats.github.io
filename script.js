@@ -205,7 +205,7 @@ publisher={Elsevier}
   year={2025},
   publisher={Authorea}
 }
-@article{JAHANBAKHT2026119070,
+@article{jahanbakht2026bulletin,
 title = {Linking fish activity and turbidity through visual and sensor data fusion and deep learning},
 journal = {Marine Pollution Bulletin},
 volume = {223},
