@@ -183,13 +183,7 @@ year={2025},
 publisher={Elsevier}
 }
 
-@article{haghighat2025multimodal,
-  title={Multimodal Language Models in Agriculture: A Tutorial and Survey},
-  author={Haghighat, Mohammadreza and Saleh, Alzayat and Azghadi, Mostafa Rahimi},
-  journal={Authorea Preprints},
-  year={2025},
-  publisher={Authorea}
-}
+ 
 
 @article{saleh2025weed,
   title={Weed Detection in Challenging Field Conditions: A Semi-Supervised Framework for Overcoming Shadow Bias and Data Scarcity},
@@ -216,6 +210,19 @@ doi = {https://doi.org/10.1016/j.marpolbul.2025.119070},
 url = {https://www.sciencedirect.com/science/article/pii/S0025326X25015462},
 author = {Mohammad Jahanbakht and Andrea Tiernan and Alzayat Saleh and Nichola Stokes and Odette Langham and Mostafa {Rahimi Azghadi} and Nathan J. Waltham},
 keywords = {Turbid water monitoring, Fish detection, Turbidity estimation, Deep learning, Image and sensor fusion}
+}
+
+@article{haghighat2025multimodal,
+title = {Multimodal language models in agriculture: A tutorial and survey},
+journal = {Information Fusion},
+volume = {129},
+pages = {104042},
+year = {2026},
+issn = {1566-2535},
+doi = {https://doi.org/10.1016/j.inffus.2025.104042},
+url = {https://www.sciencedirect.com/science/article/pii/S1566253525011042},
+author = {Mohammadreza Haghighat and Alzayat Saleh and Mostafa {Rahimi Azghadi}},
+keywords = {Multimodal language models, Agriculture AI, Deep learning, Tutorial, Smart farming, Vision-Language models}
 }
 
     `;
