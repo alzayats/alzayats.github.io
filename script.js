@@ -199,6 +199,18 @@ publisher={Elsevier}
   year={2025},
   publisher={Authorea}
 }
+
+@misc{saleh2026depth,
+  title={Depth-Resolved Coral Reef Thermal Fields from Satellite SST and Sparse In-Situ Loggers Using Physics-Informed Neural Networks},
+  author={Saleh, Alzayat and Rahimi Azghadi, Mostafa},
+  year={2026},
+  eprint={2604.13131},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG},
+  url={https://doi.org/10.48550/arXiv.2604.13131}
+}
+
+
 @article{jahanbakht2026bulletin,
 title = {Linking fish activity and turbidity through visual and sensor data fusion and deep learning},
 journal = {Marine Pollution Bulletin},
@@ -212,6 +224,7 @@ author = {Mohammad Jahanbakht and Andrea Tiernan and Alzayat Saleh and Nichola S
 keywords = {Turbid water monitoring, Fish detection, Turbidity estimation, Deep learning, Image and sensor fusion}
 }
 
+
 @article{haghighat2025multimodal,
 title = {Multimodal language models in agriculture: A tutorial and survey},
 journal = {Information Fusion},
@@ -223,6 +236,8 @@ doi = {https://doi.org/10.1016/j.inffus.2025.104042},
 url = {https://www.sciencedirect.com/science/article/pii/S1566253525011042},
 author = {Mohammadreza Haghighat and Alzayat Saleh and Mostafa {Rahimi Azghadi}},
 keywords = {Multimodal language models, Agriculture AI, Deep learning, Tutorial, Smart farming, Vision-Language models}
+
+
 }
 
     `;
