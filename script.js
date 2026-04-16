@@ -13,7 +13,8 @@ volume={6},
 number={03},
 pages={15},
 year={2018},
-publisher={Scientific Research Publishing}
+publisher={Scientific Research Publishing},
+doi={10.4236/wjet.2018.63B003}
 }
 @inproceedings{konovalov2019underwater,
 title={Underwater fish detection with weak multi-domain supervision},
@@ -21,7 +22,8 @@ author={Konovalov, Dmitry A and Saleh, Alzayat and Bradley, Michael and Sankupel
 booktitle={2019 international joint conference on neural networks (ijcnn)},
 pages={1--8},
 year={2019},
-organization={IEEE}
+organization={IEEE},
+doi={10.1109/IJCNN.2019.8851907}
 }
 @inproceedings{konovalov2019automatic,
 title={Automatic weight estimation of harvested fish from images},
@@ -29,7 +31,8 @@ author={Konovalov, Dmitry A and Saleh, Alzayat and Efremova, Dina B and Domingos
 booktitle={2019 Digital image computing: Techniques and applications (DICTA)},
 pages={1--7},
 year={2019},
-organization={IEEE}
+organization={IEEE},
+doi={10.1109/DICTA47822.2019.8945971}
 }
 @article{saleh2020realistic,
 title={A realistic fish-habitat dataset to evaluate algorithms for underwater visual analysis},
@@ -39,7 +42,8 @@ volume={10},
 number={1},
 pages={14671},
 year={2020},
-publisher={Nature Publishing Group UK London}
+publisher={Nature Publishing Group UK London},
+doi={10.1038/s41598-020-71639-x}
 }
 @article{laradji2021weakly,
 title={Weakly supervised underwater fish segmentation using affinity LCFCN},
@@ -49,7 +53,8 @@ volume={11},
 number={1},
 pages={17379},
 year={2021},
-publisher={Nature Publishing Group UK London}
+publisher={Nature Publishing Group UK London},
+doi={10.1038/s41598-021-96610-2}
 }
 @article{saleh2021deep,
 title={A deep learning localization method for measuring abdominal muscle dimensions in ultrasound images},
@@ -59,7 +64,8 @@ volume={25},
 number={10},
 pages={3865--3873},
 year={2021},
-publisher={IEEE}
+publisher={IEEE},
+doi={10.1109/JBHI.2021.3085524}
 }
 @article{saleh2022computer,
 title={Computer vision and deep learning for fish classification in underwater habitats: A survey},
@@ -69,7 +75,8 @@ volume={23},
 number={4},
 pages={977--999},
 year={2022},
-publisher={Wiley}
+publisher={Wiley},
+doi={10.1111/faf.12666}
 }
 @article{saleh2024applications,
 title={Applications of deep learning in fish habitat monitoring: A tutorial and survey},
@@ -78,7 +85,8 @@ journal={Expert Systems with Applications},
 volume={238},
 pages={121841},
 year={2024},
-publisher={Pergamon}
+publisher={Pergamon},
+doi={10.1016/j.eswa.2023.121841}
 }
 @article{saleh2023mfld,
 title={MFLD-net: a lightweight deep learning network for fish morphometry using landmark detection},
@@ -88,7 +96,8 @@ volume={57},
 number={4},
 pages={913--931},
 year={2023},
-publisher={Springer Netherlands Dordrecht}
+publisher={Springer Netherlands Dordrecht},
+doi={10.1007/s10452-023-10044-8}
 }
 @article{saleh2024prawn,
 title={Prawn morphometrics and weight estimation from images using deep learning for landmark localization},
@@ -97,7 +106,8 @@ journal={Aquacultural Engineering},
 volume={106},
 pages={102391},
 year={2024},
-publisher={Elsevier}
+publisher={Elsevier},
+doi={10.1016/j.aquaeng.2024.102391}
 }
 @article{saleh2024weedclr,
 title={WeedCLR: Weed contrastive learning through visual representations with class-optimized loss in long-tailed datasets},
@@ -106,7 +116,8 @@ journal={Computers and Electronics in Agriculture},
 volume={227},
 pages={109526},
 year={2024},
-publisher={Elsevier}
+publisher={Elsevier},
+doi={10.1016/j.compag.2024.109526}
 }
 @article{saleh2024track,
 title={How to track and segment fish without human annotations: a self-supervised deep learning approach},
@@ -116,7 +127,8 @@ volume={27},
 number={1},
 pages={4},
 year={2024},
-publisher={Springer London London}
+publisher={Springer London London},
+doi={10.1007/s10044-024-01227-6}
 }
 @article{saleh2025semi,
 title={Semi-supervised weed detection for rapid deployment and enhanced efficiency},
@@ -125,19 +137,22 @@ journal={Computers and Electronics in Agriculture},
 volume={236},
 pages={110410},
 year={2025},
-publisher={Elsevier}
+publisher={Elsevier},
+doi={10.1016/j.compag.2025.110410}
 }
 @article{saleh4899070ecological,
 title={Ecological Monitoring with Self-Supervised Learning: Fish Segmentation in Underwater Habitats},
 author={Saleh, Alzayat and Sheaves, Marcus and Jerry, Dean and Rahimi Azghadi, Mostafa},
 journal={Available at SSRN 4899070},
-year={2024} 
+year={2024},
+url={https://ssrn.com/abstract=4899070}
 }
 @article{saleh2024learning,
 title={Learning from the Giants: A Practical Approach to Underwater Depth and Surface Normals Estimation},
 author={Saleh, Alzayat and Olsen, Melanie and Senadji, Bouchra and Azghadi, Mostafa Rahimi},
 journal={arXiv preprint arXiv:2410.02072},
-year={2024}
+year={2024},
+url={https://arxiv.org/abs/2410.02072}
 }
 @article{saleh2025adaptive,
 title={Adaptive deep learning framework for robust unsupervised underwater image enhancement},
@@ -146,7 +161,8 @@ journal={Expert Systems with Applications},
 volume={268},
 pages={126314},
 year={2025},
-publisher={Pergamon}
+publisher={Pergamon},
+doi={10.1016/j.eswa.2024.126314}
 }
 @article{saleh2025overcoming,
 title={Overcoming annotation bottlenecks in underwater fish segmentation: a robust self-supervised learning approach},
@@ -156,13 +172,8 @@ volume={19},
 number={4},
 pages={1--10},
 year={2025},
-publisher={Springer London}
-}
-@misc{konovalov2019automatic_misc,
-title={Automatic weight estimation of harvested fish from images. In 2019 Digital Image Computing: Techniques and Applications (DICTA)(pp. 1--7)},
-author={Konovalov, D.A. and Saleh, A. and Efremova, D.B. and Domingos, J.A. and Jerry, D.R.},
-year={2019},
-publisher={IEEE}
+publisher={Springer London},
+doi={10.1007/s11760-025-03860-y}
 }
 @article{saleh2025fieldnet,
 title={FieldNet: Efficient real-time shadow removal for enhanced vision in field robotics},
@@ -171,7 +182,8 @@ journal={Expert Systems with Applications},
 volume={279},
 pages={127442},
 year={2025},
-publisher={Pergamon}
+publisher={Pergamon},
+doi={10.1016/j.eswa.2025.127442}
 }
 @article{azghadi2025precision,
 title={Precision robotic spot-spraying: Reducing herbicide use and enhancing environmental outcomes in sugarcane},
@@ -180,7 +192,8 @@ journal={Computers and Electronics in Agriculture},
 volume={235},
 pages={110365},
 year={2025},
-publisher={Elsevier}
+publisher={Elsevier},
+doi={10.1016/j.compag.2025.110365}
 }
 
  
@@ -189,7 +202,8 @@ publisher={Elsevier}
   title={Weed Detection in Challenging Field Conditions: A Semi-Supervised Framework for Overcoming Shadow Bias and Data Scarcity},
   author={Saleh, Alzayat and Hatano, Shunsuke and Azghadi, Mostafa Rahimi},
   journal={arXiv preprint arXiv:2508.19511},
-  year={2025}
+  year={2025},
+  url={https://arxiv.org/abs/2508.19511}
 }
 
 @article{sankar2025artificial,
@@ -207,7 +221,7 @@ publisher={Elsevier}
   eprint={2604.13131},
   archivePrefix={arXiv},
   primaryClass={cs.LG},
-  url={https://doi.org/10.48550/arXiv.2604.13131}
+  url={https://arxiv.org/abs/2604.13131}
 }
 
 
@@ -219,7 +233,7 @@ pages = {119070},
 year = {2026},
 issn = {0025-326X},
 doi = {https://doi.org/10.1016/j.marpolbul.2025.119070},
-url = {https://www.sciencedirect.com/science/article/pii/S0025326X25015462},
+url = {https://doi.org/10.1016/j.marpolbul.2025.119070},
 author = {Mohammad Jahanbakht and Andrea Tiernan and Alzayat Saleh and Nichola Stokes and Odette Langham and Mostafa {Rahimi Azghadi} and Nathan J. Waltham},
 keywords = {Turbid water monitoring, Fish detection, Turbidity estimation, Deep learning, Image and sensor fusion}
 }
@@ -233,7 +247,7 @@ pages = {104042},
 year = {2026},
 issn = {1566-2535},
 doi = {https://doi.org/10.1016/j.inffus.2025.104042},
-url = {https://www.sciencedirect.com/science/article/pii/S1566253525011042},
+url = {https://doi.org/10.1016/j.inffus.2025.104042},
 author = {Mohammadreza Haghighat and Alzayat Saleh and Mostafa {Rahimi Azghadi}},
 keywords = {Multimodal language models, Agriculture AI, Deep learning, Tutorial, Smart farming, Vision-Language models}
 
@@ -274,7 +288,7 @@ keywords = {Multimodal language models, Agriculture AI, Deep learning, Tutorial,
                 const key = body.substring(0, keyEnd).trim();
                 const entry = { type, key, raw: '@' + raw.trim() };
                 
-                const regex = /(\w+)\s*=\s*(\{.*?\}|"[^"]*"|\d+)/gs;
+                const regex = /(\w+)\s*=\s*(\{(?:[^{}]|\{[^{}]*\})*\}|"[^"]*"|\d+)/gs;
                 let match;
                 while ((match = regex.exec(body)) !== null) {
                     const field = match[1].toLowerCase();
@@ -325,7 +339,16 @@ keywords = {Multimodal language models, Agriculture AI, Deep learning, Tutorial,
         list.forEach((pub, index) => {
             const isFeatured = index === 0;
             const card = document.createElement('div');
-            card.className = `pub-card relative flex flex-col bg-white dark:bg-card border border-gray-200 dark:border-white/10 rounded-2xl overflow-hidden ${isFeatured ? 'md:col-span-2' : ''}`;
+            // Build the best available URL for this paper
+            const doiUrl = pub.doi ? (pub.doi.startsWith('http') ? pub.doi : `https://doi.org/${pub.doi}`) : '';
+            const paperUrl = pub.url || doiUrl || `https://scholar.google.com/scholar?q=${encodeURIComponent(pub.title)}`;
+
+            card.className = `pub-card relative flex flex-col bg-white dark:bg-card border border-gray-200 dark:border-white/10 rounded-2xl overflow-hidden cursor-pointer ${isFeatured ? 'md:col-span-2' : ''}`;
+            card.addEventListener('click', (e) => {
+                // Don't navigate if clicking on footer links/buttons
+                if (e.target.closest('.card-footer')) return;
+                window.open(paperUrl, '_blank');
+            });
             
             // Image
             const imgDiv = document.createElement('div');
@@ -339,7 +362,7 @@ keywords = {Multimodal language models, Agriculture AI, Deep learning, Tutorial,
             
             const badge = document.createElement('span');
             badge.className = "text-xs font-bold uppercase tracking-wider text-primary mb-2";
-            badge.textContent = pub.type === 'inproceedings' ? 'Conference' : 'Journal';
+            badge.textContent = pub.type === 'inproceedings' ? 'Conference' : (pub.type === 'misc' || (pub.journal && pub.journal.match(/arxiv|preprint|ssrn|authorea/i)) ? 'Preprint' : 'Journal');
 
             const title = document.createElement('h3');
             title.className = `font-display font-bold text-slate-900 dark:text-white mb-3 ${isFeatured ? 'text-2xl' : 'text-lg'} leading-tight`;
@@ -354,7 +377,7 @@ keywords = {Multimodal language models, Agriculture AI, Deep learning, Tutorial,
             }
 
             const footer = document.createElement('div');
-            footer.className = "mt-auto pt-4 border-t border-gray-100 dark:border-white/10 flex items-center justify-between";
+            footer.className = "card-footer mt-auto pt-4 border-t border-gray-100 dark:border-white/10 flex items-center justify-between relative z-10";
             
             const venue = document.createElement('span');
             venue.className = "text-xs font-mono text-gray-400 truncate max-w-[60%]";
@@ -393,7 +416,10 @@ keywords = {Multimodal language models, Agriculture AI, Deep learning, Tutorial,
             }
 
             // 2. DOI
-            if (pub.doi) links.appendChild(makeLink('fas fa-link', `https://doi.org/${pub.doi}`, 'DOI'));
+            if (pub.doi) {
+                const doiHref = pub.doi.startsWith('http') ? pub.doi : `https://doi.org/${pub.doi}`;
+                links.appendChild(makeLink('fas fa-link', doiHref, 'DOI'));
+            }
             
             // 3. PDF
             if (pub.pdf) links.appendChild(makeLink('fas fa-file-pdf', pub.pdf, 'PDF'));
@@ -439,6 +465,7 @@ keywords = {Multimodal language models, Agriculture AI, Deep learning, Tutorial,
         modal.classList.remove('hidden');
     };
     document.getElementById('close-modal').addEventListener('click', () => modal.classList.add('hidden'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden'); });
     document.getElementById('copy-btn').addEventListener('click', function() {
         navigator.clipboard.writeText(modalText.textContent);
         const original = this.textContent;
