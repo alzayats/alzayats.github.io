@@ -206,13 +206,7 @@ doi={10.1016/j.compag.2025.110365}
   url={https://arxiv.org/abs/2508.19511}
 }
 
-@article{sankar2025artificial,
-  title={Artificial Intelligence in Aquaculture: Current Applications and Future Directions},
-  author={Sankar, Vinu and Saleh, Alzayat and Ehrampoosh, Armin and Arbon, Phoebe and Jerry, Dean R and Azghadi, Mostafa Rahimi},
-  journal={Authorea Preprints},
-  year={2025},
-  publisher={Authorea}
-}
+
 
 @misc{saleh2026depth,
   title={Depth-Resolved Coral Reef Thermal Fields from Satellite SST and Sparse In-Situ Loggers Using Physics-Informed Neural Networks},
@@ -254,6 +248,24 @@ keywords = {Multimodal language models, Agriculture AI, Deep learning, Tutorial,
 
 }
 
+@inproceedings{haghighat2026multi,
+  title={Multi-label Instance-level Generalised Visual Grounding in Agriculture},
+  author={Haghighat, Mohammadreza and Saleh, Alzayat and Rahimi Azghadi, Mostafa},
+  booktitle={European Conference on Computer Vision},
+  pages={448--467},
+  year={2026},
+  organization={Springer}
+}
+
+@article{sankar2025artificial,
+  title={Artificial intelligence-enabled aquacultural engineering systems: A design-oriented review of sensing, modelling, and deployment architectures},
+  author={Sankar, Vinu and Saleh, Alzayat and Ehrampoosh, Armin and Arbon, Phoebe and Jerry, Dean R and Azghadi, Mostafa Rahimi},
+  journal={Computers and Electronics in Agriculture},
+  volume={256},
+  pages={112353},
+  year={2027},
+  publisher={Elsevier}
+}
     `;
 
     // 1. GENERATIVE ART FALLBACK
