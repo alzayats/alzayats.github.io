@@ -198,15 +198,17 @@ doi={10.1016/j.compag.2025.110365}
 
  
 
+ 
 @article{saleh2025weed,
   title={Weed Detection in Challenging Field Conditions: A Semi-Supervised Framework for Overcoming Shadow Bias and Data Scarcity},
-  author={Saleh, Alzayat and Hatano, Shunsuke and Azghadi, Mostafa Rahimi},
-  journal={arXiv preprint arXiv:2508.19511},
-  year={2025},
-  url={https://arxiv.org/abs/2508.19511}
+  author={Saleh, Alzayat and Hatano, Shunsuke and Rahimi Azghadi, Mostafa},
+  journal={Computers},
+  volume={15},
+  number={3},
+  pages={171},
+  year={2026},
+  publisher={MDPI}
 }
-
-
 
 @misc{saleh2026depth,
   title={Depth-Resolved Coral Reef Thermal Fields from Satellite SST and Sparse In-Situ Loggers Using Physics-Informed Neural Networks},
