@@ -1,187 +1,129 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alzayat Saleh | Deep Learning Engineer</title>
-
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%230066FF%22 /><text x=%2250%25%22 y=%2255%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2255%22 font-weight=%22bold%22 font-family=%22sans-serif%22 fill=%22%23ffffff%22>AS</text></svg>">
-    <!-- Tailwind CSS (via CDN for static hosting) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Config for Tailwind -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                fontFamily: {
-                    sans: ['Inter', 'sans-serif'],
-                    display: ['Syne', 'sans-serif'],
-                },
-                extend: {
-                    colors: {
-                        dark: '#050505',
-                        card: '#0f0f0f',
-                        primary: '#2dd4bf', /* Teal */
-                        secondary: '#818cf8', /* Indigo */
-                    },
-                    animation: {
-                        'blob': 'blob 10s infinite',
-                        'fade-in': 'fadeIn 0.8s ease-out forwards',
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Alzayat Saleh | Computer Vision &amp; Deep Learning</title>
+    <meta name="description" content="Alzayat Saleh, PhD: Research Fellow in computer vision and deep learning at James Cook University, building label-efficient models for marine ecology, aquaculture, precision agriculture and medical imaging.">
+    <meta property="og:title" content="Alzayat Saleh | Computer Vision & Deep Learning">
+    <meta property="og:description" content="Label-efficient computer vision for marine ecology, aquaculture, precision agriculture and medical imaging.">
+    <meta property="og:type" content="profile">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%232f5d9e%22/><text x=%2250%22 y=%2254%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2248%22 font-family=%22Georgia,serif%22 fill=%22%23ffffff%22>AL</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>
+        // Apply the saved theme before first paint (no flash)
+        try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
 </head>
-<body class="bg-gray-50 text-slate-900 dark:bg-dark dark:text-gray-100 transition-colors duration-300 relative">
+<body>
+    <header class="topbar">
+        <div class="wrap topbar-inner">
+            <a href="#top" class="brand">Alzayat Saleh</a>
+            <nav aria-label="Sections">
+                <a href="#research">Research</a>
+                <a href="#publications">Publications</a>
+                <a href="#contact">Contact</a>
+                <button id="themeToggle" class="icon-btn" type="button" aria-label="Switch light or dark theme" title="Light / dark">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+                </button>
+            </nav>
+        </div>
+    </header>
 
-    <!-- BACKGROUND LAYERS (Fixed Z-Index) -->
-    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <!-- Blobs -->
-        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-primary/30 rounded-full mix-blend-multiply blur-3xl animate-blob"></div>
-        <div class="absolute top-[20%] right-[-10%] w-96 h-96 bg-secondary/30 rounded-full mix-blend-multiply blur-3xl animate-blob" style="animation-delay: 2s"></div>
-        <div class="absolute bottom-[-10%] left-[20%] w-96 h-96 bg-purple-500/30 rounded-full mix-blend-multiply blur-3xl animate-blob" style="animation-delay: 4s"></div>
-        <!-- Noise Texture -->
-        <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%221%22/%3E%3C/svg%3E');"></div>
-    </div>
-
-    <!-- NAVIGATION (Floating Dock) -->
-    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 p-2 rounded-full border border-gray-200 dark:border-white/10 bg-white/80 dark:bg-black/80 backdrop-blur-lg shadow-xl flex items-center gap-1">
-        <a href="#home" class="p-3 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors text-gray-500 dark:text-gray-400 hover:text-primary" aria-label="Home">
-            <i class="fas fa-home"></i>
-        </a>
-        <a href="#publications" class="p-3 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors text-gray-500 dark:text-gray-400 hover:text-primary" aria-label="Publications">
-            <i class="fas fa-layer-group"></i>
-        </a>
-        <a href="#connect" class="p-3 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors text-gray-500 dark:text-gray-400 hover:text-primary" aria-label="Contact">
-            <i class="fas fa-paper-plane"></i>
-        </a>
-        <div class="w-px h-4 bg-gray-300 dark:bg-white/20 mx-1"></div>
-        <button id="themeToggle" class="p-3 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors text-gray-500 dark:text-gray-400">
-            <i class="fas fa-moon dark:hidden"></i>
-            <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
-        </button>
-    </nav>
-
-    <!-- MAIN CONTENT -->
-    <main class="container mx-auto px-6 md:px-12 max-w-6xl pt-24 pb-40 z-10 relative">
-        
-        <!-- HERO SECTION -->
-        <section id="home" class="min-h-[80vh] flex flex-col justify-center items-start fade-section">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-6">
-                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                PhD Computer Vision
-            </div>
-            
-            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] mb-8">
-                Alzayat <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Saleh.</span>
-            </h1>
-            
-            <p class="font-sans text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed mb-10">
-<!--                <strong>Alzayat Saleh</strong>. -->
-                Engineering deep learning systems that bridge the gap between theoretical models and real-world deployment in ecology, healthcare, and robotics.
-            </p>
-
-            <div class="flex gap-4">
-                <a href="#publications" class="bg-slate-900 dark:bg-white text-white dark:text-black px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform">
-                    My Research
-                </a>
-                <a href="#connect" class="px-8 py-3 rounded-full border border-gray-300 dark:border-white/20 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors">
-                    Contact
-                </a>
+    <main id="top" class="wrap">
+        <!-- INTRO -->
+        <section class="intro">
+            <div class="intro-text">
+                <p class="eyebrow">Research Fellow &middot; Computer Vision &amp; Deep Learning</p>
+                <h1>Alzayat Saleh</h1>
+                <p class="affil">James Cook University, Australia</p>
+                <p class="lede">
+                    I build computer vision systems that work outside the lab: in murky water, in bright
+                    paddocks and in clinical scans. Much of my work asks how to train reliable models when
+                    labelled data is scarce, using self-supervised, semi-supervised and weakly supervised learning,
+                    and how to make those models small and fast enough to deploy on real equipment.
+                </p>
+                <ul class="links" aria-label="Profiles">
+                    <li><a href="https://scholar.google.com/citations?user=OaFJvaIAAAAJ" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zm-6.82 9.99v4L12 21l6.82-4.01v-4L12 17l-6.82-4.01z"/></svg>Google Scholar</a></li>
+                    <li><a href="https://github.com/alzayats" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>GitHub</a></li>
+                    <li><a href="https://linkedin.com/in/alzayat" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a></li>
+                    <li><a href="https://twitter.com/alzayats" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64z"/></svg>X / Twitter</a></li>
+                </ul>
             </div>
         </section>
 
-        <!-- STATS -->
-        <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-32 fade-section">
-            <div class="p-6 rounded-2xl bg-white/50 dark:bg-white/5 border border-gray-200 dark:border-white/10 backdrop-blur-sm">
-                <div class="text-3xl font-display font-bold mb-1">20+</div>
-                <div class="text-xs uppercase tracking-widest opacity-60">Publications</div>
-            </div>
-            <div class="p-6 rounded-2xl bg-white/50 dark:bg-white/5 border border-gray-200 dark:border-white/10 backdrop-blur-sm">
-                <div class="text-3xl font-display font-bold mb-1">1000+</div>
-                <div class="text-xs uppercase tracking-widest opacity-60">Citations</div>
-            </div>
-            <div class="p-6 rounded-2xl bg-white/50 dark:bg-white/5 border border-gray-200 dark:border-white/10 backdrop-blur-sm">
-                <div class="text-3xl font-display font-bold mb-1">PhD</div>
-                <div class="text-xs uppercase tracking-widest opacity-60">Deep Learning</div>
-            </div>
-            <div class="p-6 rounded-2xl bg-white/50 dark:bg-white/5 border border-gray-200 dark:border-white/10 backdrop-blur-sm">
-                <div class="text-3xl font-display font-bold mb-1">AU</div>
-                <div class="text-xs uppercase tracking-widest opacity-60">Based</div>
+        <!-- RESEARCH -->
+        <section id="research" class="section">
+            <h2>Research</h2>
+            <div class="areas">
+                <button class="area" type="button" data-topic="marine">
+                    <span class="area-title">Marine ecology &amp; aquaculture</span>
+                    <span class="area-text">Fish detection, segmentation and tracking in underwater video; size and weight estimation for fish and prawns; underwater depth and image enhancement; coral reef thermal fields.</span>
+                    <span class="area-count" data-count="marine"></span>
+                </button>
+                <button class="area" type="button" data-topic="agri">
+                    <span class="area-title">Precision agriculture</span>
+                    <span class="area-text">Weed detection under changing field conditions, real-time shadow removal, robotic spot-spraying that cuts herbicide use, and multimodal language models for farming.</span>
+                    <span class="area-count" data-count="agri"></span>
+                </button>
+                <button class="area" type="button" data-topic="medical">
+                    <span class="area-title">Medical imaging</span>
+                    <span class="area-text">Deep learning localisation for measuring abdominal muscle dimensions in clinical scans.</span>
+                    <span class="area-count" data-count="medical"></span>
+                </button>
+                <div class="area area-method">
+                    <span class="area-title">Across all of it</span>
+                    <span class="area-text">Learning with few labels (self-, semi- and weakly supervised), realistic benchmark datasets, and lightweight networks for deployment in the field.</span>
+                </div>
             </div>
         </section>
 
         <!-- PUBLICATIONS -->
-        <section id="publications" class="mb-32">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 fade-section">
-                <div>
-                    <h2 class="font-display text-4xl font-bold mb-2">Research</h2>
-                    <p class="text-gray-500 dark:text-gray-400">Recent contributions to Deep Learning & Vision.</p>
-                </div>
-                <!-- Filters -->
-                <div class="flex gap-2 mt-4 md:mt-0">
-                    <button class="filter-btn active px-4 py-2 text-sm rounded-full bg-slate-900 dark:bg-white text-white dark:text-black" data-filter="all">All</button>
-                    <button class="filter-btn px-4 py-2 text-sm rounded-full border border-gray-200 dark:border-white/20 hover:bg-gray-100 dark:hover:bg-white/10" data-filter="article">Journals</button>
-                    <button class="filter-btn px-4 py-2 text-sm rounded-full border border-gray-200 dark:border-white/20 hover:bg-gray-100 dark:hover:bg-white/10" data-filter="inproceedings">Conferences</button>
-                </div>
+        <section id="publications" class="section">
+            <div class="pubs-head">
+                <h2>Publications</h2>
+                <p class="muted" id="pub-summary"></p>
             </div>
-
-            <!-- Grid Container -->
-            <div id="publications-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- JS will inject items here -->
-                <div class="col-span-full text-center py-10 opacity-50">Loading Publications...</div>
+            <div class="toolbar">
+                <div class="chips" role="group" aria-label="Filter by topic">
+                    <button class="chip is-on" type="button" data-topic="all">All</button>
+                    <button class="chip" type="button" data-topic="marine">Marine &amp; aquaculture</button>
+                    <button class="chip" type="button" data-topic="agri">Agriculture</button>
+                    <button class="chip" type="button" data-topic="medical">Medical</button>
+                </div>
+                <label class="search">
+                    <span class="sr-only">Search publications</span>
+                    <input id="pub-search" type="search" placeholder="Search title, venue, co-author" autocomplete="off">
+                </label>
             </div>
+            <div id="publications-list" aria-live="polite">
+                <p class="muted">Loading publications&hellip;</p>
+            </div>
+            <noscript><p>See the full list on <a href="https://scholar.google.com/citations?user=OaFJvaIAAAAJ">Google Scholar</a>.</p></noscript>
         </section>
 
-        <!-- CONNECT -->
-        <section id="connect" class="max-w-4xl mx-auto fade-section">
-            <div class="relative p-8 md:p-12 rounded-3xl bg-white dark:bg-card border border-gray-200 dark:border-white/10 shadow-2xl overflow-hidden">
-                <div class="flex flex-col md:flex-row gap-8 items-center">
-                    <div class="relative">
-                        <img src="images/profile.jpg" alt="Profile" class="w-32 h-32 rounded-full object-cover border-4 border-white dark:border-black bg-gray-200" onerror="this.src='https://ui-avatars.com/api/?name=Alzayat+Saleh&background=random'">
-                        <div class="absolute bottom-2 right-2 w-5 h-5 bg-green-500 border-4 border-white dark:border-black rounded-full"></div>
-                    </div>
-                    <div class="text-center md:text-left flex-1">
-                        <h2 class="font-display text-3xl font-bold mb-2">Let's Connect</h2>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">Open to collaborations in AI, marine robotics, and agricultural tech.</p>
-                        
-                        <div class="flex flex-wrap justify-center md:justify-start gap-4">
-                            <button id="email-btn" class="px-6 py-2 rounded-xl bg-gray-100 dark:bg-white/10 hover:bg-primary hover:text-black transition-colors font-medium">
-                                <i class="fas fa-envelope mr-2"></i> Reveal Email
-                            </button>
-                            <a href="https://github.com/alzayats" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-white/10 hover:bg-black hover:text-white transition-colors"><i class="fab fa-github"></i></a>
-                            <a href="https://twitter.com/alzayats" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-white/10 hover:bg-blue-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
-                            <a href="https://linkedin.com/in/alzayat" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-white/10 hover:bg-blue-700 hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://scholar.google.com/citations?user=OaFJvaIAAAAJ" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-white/10 hover:bg-blue-500 hover:text-white transition-colors"><i class="fas fa-graduation-cap"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- CONTACT -->
+        <section id="contact" class="section contact">
+            <h2>Contact</h2>
+            <p>I am open to collaborations in computer vision for ecology, aquaculture, agriculture and robotics.</p>
+            <p class="contact-row">
+                <button id="email-btn" class="btn" type="button">Show email address</button>
+                <span id="email-out" class="email-out" hidden></span>
+            </p>
         </section>
-
-        <footer class="mt-20 text-center text-sm text-gray-500 font-mono">
-            &copy; <span id="year"></span> Alzayat Saleh.
-        </footer>
-
     </main>
 
-    <!-- Modal -->
-    <div id="bibtex-modal" class="fixed inset-0 z-[100] hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-[#1a1a1a] w-full max-w-2xl rounded-2xl shadow-2xl border border-white/10 transform transition-all p-6 relative">
-            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-red-500"><i class="fas fa-times text-xl"></i></button>
-            <h3 class="font-bold text-xl mb-4">Citation (BibTeX)</h3>
-            <pre id="bibtex-text" class="bg-gray-100 dark:bg-black p-4 rounded-lg overflow-x-auto text-xs font-mono text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-white/10 max-h-64"></pre>
-            <button id="copy-btn" class="mt-4 px-4 py-2 bg-primary text-black font-bold rounded hover:opacity-90">Copy to Clipboard</button>
-        </div>
-    </div>
+    <footer class="wrap footer">
+        <span>&copy; <span id="year"></span> Alzayat Saleh</span>
+        <a href="#top">Back to top</a>
+    </footer>
 
     <script src="script.js"></script>
 </body>
