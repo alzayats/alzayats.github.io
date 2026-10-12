@@ -5,6 +5,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // BibTeX Data
     const bibtexData = `
+@article{saleh2026uniqat,
+  title={UNIQAT: An open-source toolkit for reproducible image quality assessment in marine surveys},
+  author={Saleh, Alzayat and Chennu, Arjun},
+  journal={Methods in Ecology and Evolution},
+  year={2026},
+  publisher={Wiley},
+  doi={10.1111/2041-210X.70431}
+}
+
 @article{konovalov2018estimating,
 title={Estimating mass of harvested Asian seabass Lates calcarifer from images},
 author={Konovalov, Dmitry A and Saleh, Alzayat and Efremova, Dina B and Domingos, Jose A and Jerry, Dean R},
@@ -139,13 +148,6 @@ pages={110410},
 year={2025},
 publisher={Elsevier},
 doi={10.1016/j.compag.2025.110410}
-}
-@article{saleh4899070ecological,
-title={Ecological Monitoring with Self-Supervised Learning: Fish Segmentation in Underwater Habitats},
-author={Saleh, Alzayat and Sheaves, Marcus and Jerry, Dean and Rahimi Azghadi, Mostafa},
-journal={Available at SSRN 4899070},
-year={2024},
-url={https://ssrn.com/abstract=4899070}
 }
 @article{saleh2024learning,
 title={Learning from the Giants: A Practical Approach to Underwater Depth and Surface Normals Estimation},
