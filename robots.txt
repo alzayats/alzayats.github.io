@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alzayats.github.io/sitemap.xml

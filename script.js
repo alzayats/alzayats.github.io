@@ -349,6 +349,7 @@ keywords = {Multimodal language models, Agriculture AI, Deep learning, Tutorial,
     const allPubs = parseBibtex(bibtexData)
         .map(p => ({ ...p, topic: topicOf(p.key), kind: kindOf(p), year: +p.year || 0 }))
         .sort((a, b) => b.year - a.year);
+    window.pubData = allPubs; // read by tools/prerender.py
 
     function pubItem(pub) {
         const li = document.createElement('li');

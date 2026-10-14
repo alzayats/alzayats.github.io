@@ -1,0 +1,38 @@
+# Alzayat Saleh: publications
+
+> Full publication list of Alzayat Saleh, Research Fellow in computer vision and deep learning at James Cook University (AIMS@JCU), Australia. PhD (2023) and MPhil (2020), James Cook University. Research: computer vision for marine ecology, aquaculture, precision agriculture and medical imaging, often learning from few labels.
+
+## Links
+- [Personal website](https://alzayat.com/)
+- [Ask my papers: AI assistant with page citations](https://papers.alzayat.com/)
+- [Google Scholar](https://scholar.google.com/citations?user=OaFJvaIAAAAJ)
+- [ORCID](https://orcid.org/0000-0001-6973-019X)
+- [GitHub](https://github.com/alzayats)
+
+## Papers (26, newest first)
+- UNIQAT: An open-source toolkit for reproducible image quality assessment in marine surveys. Alzayat Saleh, Arjun Chennu. Methods in Ecology and Evolution, 2026. https://doi.org/10.1111/2041-210X.70431
+- Lessons from Building a Semantic 3D Gaussian Splatting Pipeline for Multi-Year Coral Reef Monitoring. Alzayat Saleh, Kang Han, Renata Ferrari. RSS 2026 Workshop: Mapping the Reef: Underwater 3D Reconstruction for Coral Ecosystems, 2026. Best Application Award. https://alejandrofontan.github.io/Mapping-the-Reef-RSS26/assets/proceedings/2.pdf
+- Weed Detection in Challenging Field Conditions: A Semi-Supervised Framework for Overcoming Shadow Bias and Data Scarcity. Alzayat Saleh, Shunsuke Hatano, Mostafa Rahimi Azghadi. Computers, 2026.
+- Depth-Resolved Coral Reef Thermal Fields from Satellite SST and Sparse In-Situ Loggers Using Physics-Informed Neural Networks. Alzayat Saleh, Mostafa Rahimi Azghadi. Preprint, 2026. https://arxiv.org/abs/2604.13131
+- Linking fish activity and turbidity through visual and sensor data fusion and deep learning. Mohammad Jahanbakht, Andrea Tiernan, Alzayat Saleh, Nichola Stokes, Odette Langham, Mostafa Rahimi Azghadi, Nathan J. Waltham. Marine Pollution Bulletin, 2026. https://doi.org/10.1016/j.marpolbul.2025.119070
+- Multimodal language models in agriculture: A tutorial and survey. Mohammadreza Haghighat, Alzayat Saleh, Mostafa Rahimi Azghadi. Information Fusion, 2026. https://doi.org/10.1016/j.inffus.2025.104042
+- Multi-label Instance-level Generalised Visual Grounding in Agriculture. Mohammadreza Haghighat, Alzayat Saleh, Mostafa Rahimi Azghadi. European Conference on Computer Vision, 2026.
+- Artificial intelligence-enabled aquacultural engineering systems: A design-oriented review of sensing, modelling, and deployment architectures. Vinu Sankar, Alzayat Saleh, Armin Ehrampoosh, Phoebe Arbon, Dean R Jerry, Mostafa Rahimi Azghadi. Computers and Electronics in Agriculture, 2026.
+- Semi-supervised weed detection for rapid deployment and enhanced efficiency. Alzayat Saleh, Alex Olsen, Jake Wood, Bronson Philippa, Mostafa Rahimi Azghadi. Computers and Electronics in Agriculture, 2025. https://doi.org/10.1016/j.compag.2025.110410
+- Adaptive deep learning framework for robust unsupervised underwater image enhancement. Alzayat Saleh, Marcus Sheaves, Dean Jerry, Mostafa Rahimi Azghadi. Expert Systems with Applications, 2025. https://doi.org/10.1016/j.eswa.2024.126314
+- Overcoming annotation bottlenecks in underwater fish segmentation: a robust self-supervised learning approach. Alzayat Saleh, Marcus Sheaves, Dean Jerry, Mostafa Rahimi Azghadi. Signal, Image and Video Processing, 2025. https://doi.org/10.1007/s11760-025-03860-y
+- FieldNet: Efficient real-time shadow removal for enhanced vision in field robotics. Alzayat Saleh, Alex Olsen, Jake Wood, Bronson Philippa, Mostafa Rahimi Azghadi. Expert Systems with Applications, 2025. https://doi.org/10.1016/j.eswa.2025.127442
+- Precision robotic spot-spraying: Reducing herbicide use and enhancing environmental outcomes in sugarcane. Mostafa Rahimi Azghadi, Alex Olsen, Jake Wood, Alzayat Saleh, Brendan Calvert, Terry Granshaw, Emilie Fillols, Bronson Philippa. Computers and Electronics in Agriculture, 2025. https://doi.org/10.1016/j.compag.2025.110365
+- Applications of deep learning in fish habitat monitoring: A tutorial and survey. Alzayat Saleh, Marcus Sheaves, Dean Jerry, Mostafa Rahimi Azghadi. Expert Systems with Applications, 2024. https://doi.org/10.1016/j.eswa.2023.121841
+- Prawn morphometrics and weight estimation from images using deep learning for landmark localization. Alzayat Saleh, Md Mehedi Hasan, Herman W Raadsma, Mehar S Khatkar, Dean R Jerry, Mostafa Rahimi Azghadi. Aquacultural Engineering, 2024. https://doi.org/10.1016/j.aquaeng.2024.102391
+- WeedCLR: Weed contrastive learning through visual representations with class-optimized loss in long-tailed datasets. Alzayat Saleh, Alex Olsen, Jake Wood, Bronson Philippa, Mostafa Rahimi Azghadi. Computers and Electronics in Agriculture, 2024. https://doi.org/10.1016/j.compag.2024.109526
+- How to track and segment fish without human annotations: a self-supervised deep learning approach. Alzayat Saleh, Marcus Sheaves, Dean Jerry, Mostafa Rahimi Azghadi. Pattern Analysis and Applications, 2024. https://doi.org/10.1007/s10044-024-01227-6
+- Learning from the Giants: A Practical Approach to Underwater Depth and Surface Normals Estimation. Alzayat Saleh, Melanie Olsen, Bouchra Senadji, Mostafa Rahimi Azghadi. arXiv preprint arXiv:2410.02072, 2024. https://arxiv.org/abs/2410.02072
+- MFLD-net: a lightweight deep learning network for fish morphometry using landmark detection. Alzayat Saleh, David Jones, Dean Jerry, Mostafa Rahimi Azghadi. Aquatic Ecology, 2023. https://doi.org/10.1007/s10452-023-10044-8
+- Computer vision and deep learning for fish classification in underwater habitats: A survey. Alzayat Saleh, Marcus Sheaves, Mostafa Rahimi Azghadi. Fish and Fisheries, 2022. https://doi.org/10.1111/faf.12666
+- Weakly supervised underwater fish segmentation using affinity LCFCN. Issam H Laradji, Alzayat Saleh, Pau Rodriguez, Derek Nowrouzezahrai, Mostafa Rahimi Azghadi, David Vazquez. Scientific reports, 2021. https://doi.org/10.1038/s41598-021-96610-2
+- A deep learning localization method for measuring abdominal muscle dimensions in ultrasound images. Alzayat Saleh, Issam H Laradji, Corey Lammie, David Vazquez, Carol A Flavell, Mostafa Rahimi Azghadi. IEEE Journal of Biomedical and Health Informatics, 2021. https://doi.org/10.1109/JBHI.2021.3085524
+- A realistic fish-habitat dataset to evaluate algorithms for underwater visual analysis. Alzayat Saleh, Issam H Laradji, Dmitry A Konovalov, Michael Bradley, David Vazquez, Marcus Sheaves. Scientific reports, 2020. https://doi.org/10.1038/s41598-020-71639-x
+- Underwater fish detection with weak multi-domain supervision. Dmitry A Konovalov, Alzayat Saleh, Michael Bradley, Mangalam Sankupellay, Simone Marini, Marcus Sheaves. 2019 international joint conference on neural networks (ijcnn), 2019. https://doi.org/10.1109/IJCNN.2019.8851907
+- Automatic weight estimation of harvested fish from images. Dmitry A Konovalov, Alzayat Saleh, Dina B Efremova, Jose A Domingos, Dean R Jerry. 2019 Digital image computing: Techniques and applications (DICTA), 2019. https://doi.org/10.1109/DICTA47822.2019.8945971
+- Estimating mass of harvested Asian seabass Lates calcarifer from images. Dmitry A Konovalov, Alzayat Saleh, Dina B Efremova, Jose A Domingos, Dean R Jerry. World Journal of Engineering and Technology, 2018. https://doi.org/10.4236/wjet.2018.63B003
