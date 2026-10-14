@@ -127,3 +127,28 @@ button.area:hover { border-color: var(--accent); }
     .thumb { width: 88px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Side projects: each card keeps its own brand colours (Favabeans green, Paper Assistant blue) */
+.projects { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.proj { display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); color: var(--ink); text-decoration: none; transition: border-color .15s, transform .15s; }
+.proj:hover { transform: translateY(-2px); }
+.proj-head { display: flex; align-items: center; gap: 12px; }
+.proj-logo { width: 44px; height: 44px; flex: none; }
+.proj-name { display: block; font: 600 19px/1.25 var(--sans); }
+.proj-url { display: block; font-size: 14px; font-weight: 600; }
+.proj-text { color: var(--muted); font-size: 15px; line-height: 1.55; }
+.proj-fava { border-color: rgb(109 186 91 / .55); }
+.proj-fava:hover { border-color: #6DBA5B; }
+.proj-fava .proj-url { color: #8a6a3a; }
+.proj-papers { border-color: rgb(37 99 235 / .4); }
+.proj-papers:hover { border-color: #2563eb; }
+.proj-papers .proj-url { color: #1d4ed8; }
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .proj-fava .proj-name { color: #FFF4DC; }
+    :root:not([data-theme="light"]) .proj-fava .proj-url { color: #CFE8A9; }
+    :root:not([data-theme="light"]) .proj-papers .proj-url { color: #7ea6ff; }
+}
+:root[data-theme="dark"] .proj-fava .proj-name { color: #FFF4DC; }
+:root[data-theme="dark"] .proj-fava .proj-url { color: #CFE8A9; }
+:root[data-theme="dark"] .proj-papers .proj-url { color: #7ea6ff; }
+@media (max-width: 720px) { .projects { grid-template-columns: 1fr; } }
