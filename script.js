@@ -14,6 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
   doi={10.1111/2041-210X.70431}
 }
 
+@inproceedings{saleh2026lessons,
+  title={Lessons from Building a Semantic 3D Gaussian Splatting Pipeline for Multi-Year Coral Reef Monitoring},
+  author={Saleh, Alzayat and Han, Kang and Ferrari, Renata},
+  booktitle={RSS 2026 Workshop: Mapping the Reef: Underwater 3D Reconstruction for Coral Ecosystems},
+  year={2026},
+  url={https://alejandrofontan.github.io/Mapping-the-Reef-RSS26/assets/proceedings/2.pdf},
+  award={Best Application Award}
+}
+
 @article{konovalov2018estimating,
 title={Estimating mass of harvested Asian seabass Lates calcarifer from images},
 author={Konovalov, Dmitry A and Saleh, Alzayat and Efremova, Dina B and Domingos, Jose A and Jerry, Dean R},
@@ -355,6 +364,7 @@ keywords = {Multimodal language models, Agriculture AI, Deep learning, Tutorial,
                 <h3 class="pub-title"><a href="${esc(paperUrl(pub))}" target="_blank" rel="noopener">${esc(pub.title)}</a></h3>
                 <p class="pub-authors">${formatAuthors(pub.author)}</p>
                 <p class="pub-venue"><em>${esc(venue)}</em>${extra ? ', ' + esc(extra) : ''}${pub.kind !== 'Journal' ? `<span class="tag">${pub.kind}</span>` : ''}</p>
+                ${pub.award ? `<p class="pub-award"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15.48 12.89 1.51 8.53a.5.5 0 0 1-.81.47l-3.58-2.69a1 1 0 0 0-1.2 0l-3.59 2.69a.5.5 0 0 1-.81-.47l1.51-8.53"/><circle cx="12" cy="8" r="6"/></svg>${esc(pub.award)}</p>` : ''}
                 <div class="pub-actions">
                     ${pub.doi ? `<a href="${esc(paperUrl(pub))}" target="_blank" rel="noopener">DOI</a>` : (pub.url ? `<a href="${esc(pub.url)}" target="_blank" rel="noopener">Paper</a>` : '')}
                     ${pub.pdf ? `<a href="${esc(pub.pdf)}" target="_blank" rel="noopener">PDF</a>` : ''}

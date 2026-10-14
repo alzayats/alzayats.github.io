@@ -96,6 +96,10 @@ button.area:hover { border-color: var(--accent); }
 .pub-authors strong { color: var(--ink); font-weight: 600; }
 .pub-venue { margin: 0; font-size: 14px; color: var(--muted); }
 .pub-venue em { color: var(--ink-2); }
+.pub-award { display: inline-flex; align-items: center; gap: 6px; margin: 6px 0 0; padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; color: #8a5a00; background: #fdf3dc; border: 1px solid #f0d9a6; }
+.pub-award svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pub-award { color: #f0c46a; background: #2e2510; border-color: #5a4720; } }
+:root[data-theme="dark"] .pub-award { color: #f0c46a; background: #2e2510; border-color: #5a4720; }
 .tag { display: inline-block; margin-left: 6px; padding: 0 7px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; vertical-align: 1px; background: var(--accent-soft); color: var(--accent); }
 .pub-actions { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 8px; font-size: 13px; font-weight: 500; }
 .pub-actions button { padding: 0; border: 0; background: none; color: var(--accent); cursor: pointer; }
