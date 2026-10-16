@@ -150,6 +150,9 @@ button.area:hover { border-color: var(--accent); }
 .proj-papers { border-color: rgb(37 99 235 / .35); }
 .proj-papers:hover { border-color: #2563eb; }
 .proj-papers .proj-url, .proj-papers .proj-arrow { color: #1d4ed8; }
+img.proj-logo { border-radius: 12px; object-fit: cover; }
+.proj-tool .proj-url, .proj-tool .proj-arrow { color: var(--muted); }
+.proj-tool:hover { border-color: var(--accent, var(--ink)); }
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) .proj { background: rgb(255 255 255 / .03); }
     :root:not([data-theme="light"]) .proj:hover { background: rgb(255 255 255 / .06); }
